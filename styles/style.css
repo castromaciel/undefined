@@ -1,0 +1,9 @@
+:root{
+  --first: #F5AF19;
+  --second: #F12711;
+}
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}

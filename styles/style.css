@@ -15,7 +15,7 @@ body{
 .fondNavbar{
   background-color: var(--first);
 }
-.page-link{
+.pageLink{
   transition: 200ms;
   background-color: var(--first);
   border: 0;
@@ -24,27 +24,12 @@ body{
   text-decoration: none;
   color: black;
 }
-.page-link:hover{
+.pageLink:hover{
   color: white;
   text-decoration: none;
   background-color: var(--first);
 }
 
-.hero{
-  background: linear-gradient(to bottom right, var(--second),rgb(0, 0, 1));
-  padding: 5% 0;
-  box-shadow: 
-    4px 8px 10px 0 rgba(0, 0, 0, 0.5),
-    0 6px 20px 0 rgba(0, 0, 0, 0.5);
-  color: rgb(255,255,255);
-}
-.row{
-  --bs-gutter-x: 0;
-}
-.carousel-control-next, .carousel-control-prev{
-  width: 5%;
-  opacity: 0;
-}
 footer .container-fluid{ /*Padre: Footer and container-fluid: Hijo!*/
   padding: 0;
 }
@@ -55,6 +40,6 @@ footer a{
 .footerMargin{
   margin-top: 5rem;
 }
-.fondsocial{
+.fondSocial{
   background-color: var(--first);
 }

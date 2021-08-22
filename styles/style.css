@@ -11,53 +11,35 @@ body{
   background: linear-gradient(to bottom left, var(--first),var(--second));
   height: 100vh;
 }
-.hero{
-  background: linear-gradient(to bottom right, var(--second),rgb(0, 0, 1));
-  padding: 5% 0;
-  box-shadow: 
-    4px 8px 10px 0 rgba(0, 0, 0, 0.5),
-    0 6px 20px 0 rgba(0, 0, 0, 0.5);
-  color: rgb(255,255,255);
+
+.fondNavbar{
+  background-color: var(--first);
 }
-.reviewText{
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 6;
-  line-clamp: 6;
-  overflow: hidden;
+.pageLink{
+  transition: 200ms;
+  background-color: var(--first);
+  border: 0;
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: black;
 }
-.reviewTextTable{
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-  line-clamp: 1;
-  overflow: hidden;
-}
-.reviewTextTable2{
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-  line-clamp: 1;
-  overflow: hidden;
+.pageLink:hover{
+  color: white;
+  text-decoration: none;
+  background-color: var(--first);
 }
 
-.modal-content{
-  background: #212529;
-  color:#FFFFFF;
+footer .container-fluid{ /*Padre: Footer and container-fluid: Hijo!*/
+  padding: 0;
 }
-.row{
-  --bs-gutter-x: 0;
+footer a{
+  text-decoration: none;
+  color: black;
 }
-.carousel-control-next, .carousel-control-prev{
-  width: 5%;
-  opacity: 0;
+.footerMargin{
+  margin-top: 5rem;
 }
-.bi{
-  cursor: pointer;
-}
-.star.fav{
-  color: gold;
-}
-table{
-  border-collapse: inherit;
+.fondSocial{
+  background-color: var(--first);
 }

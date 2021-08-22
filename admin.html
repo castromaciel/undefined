@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Styles -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <title>Undefined Games</title>
+  </head>
+  <body>
+    <main>
+      <section class="bg-dark">
+        <div class="d-flex flex-row justify-content-between align-items-center align-content-center">
+          <h1 class="text-white">Administrar Juegos</h1>
+          <!-- Añadir Juego -->
+          <button type="button" class="btn btn-secondary me-4" data-bs-toggle="modal" data-bs-target="#newGameModal">Nuevo +</button>
+          <div class="modal fade" id="newGameModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title" id="exampleModalLabel">Agregar Juego</h3>
+                  <button type="button" class="bg-light btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="newGame">
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1">Uf</span>
+                      <input type="text" class="form-control" name="name" placeholder="Nombre del Juego" aria-label="Nombre del Juego">
+                    </div>
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon2">$</span>
+                      <input type="text" class="form-control" name="price" placeholder="Precio" aria-label="Precio">
+                    </div>
+                    <div class="d-flex justify-content-between">
+                    </div>
+                    <h4>Categorías</h4>
+                    <div>
+                      <select class="form-select mb-3" id="categoriesGame" name="categories" multiple="multiple" aria-label="multiple select example">
+                        <option selected>Abrir</option>
+                        <option value="Free">Free</option>
+                        <option value="FPS">FPS</option>
+                        <option value="Multijugador">Multijugador</option>
+                        <option value="Estrategia">Estrategia</option>
+                        <option value="MOBA">MOBA</option>
+                        <option value="Rol">Rol</option>
+                        <option value="Mundo Abierto">Mundo Abierto</option>
+                        <option value="RV">RV</option>
+                        <option value="Aventuras">Aventuras</option>
+                        <option value="Ritmo">Ritmo</option>
+                        <option value="Música">Música</option>
+                        <option value="Acción">Acción</option>
+                        <option value="Sangriento">Sangriento</option>
+                        <option value="Exploración">Exploración</option>
+                        <option value="Ciencia Ficción">Ciencia Ficción</option>
+                        <option value="JcJ (PvP)">JcJ (PvP)</option>
+                        <option value="Batalla Real">Batalla Real</option>
+                        <option value="Disparos">Disparos</option>
+                        <option value="Zombie">Zombie</option>
+                        <option value="Familiar">Familiar</option>
+                        <option value="Comida">Comida</option>
+                        <option value="Clásico">Clásico</option>
+                        <option value="Retro">Retro</option>
+                      </select>
+                    </div>
+                    <h4>Descripción</h4>
+                    <div class="mb-3">
+                      <textarea class="form-control" name="description" id="" rows="3"></textarea>
+                    </div>
+                    <h4 class="mb-3">Requerimentos Mínimos</h4>
+                    <form id="requirmentsMin">
+                      <div class="row mb-3">
+                        <h5 class="ms-3 col-6">So:</h5>
+                        <div class="col-4">
+                          <select class="form-select mx-5" name="requirmentsMin.so" aria-label="Default select example">
+                            <option selected>Abrir</option>
+                            <option value="Widnows 7">Widnows 7</option>
+                            <option value="Windows 10">Windows 10</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <h5 class="ms-3 col-6">Procesador:</h5>
+                        <div class="col-4">
+                          <select class="form-select mx-5" name="requirmentsMin.processor" aria-label="Default select example">
+                            <option selected>Abrir</option>
+                            <option value="Intel Core2 Duo">Intel Core2 Duo</option>
+                            <option value="Intel core i5">Intel core i5</option>
+                            <option value="Intel core i7">Intel core i7</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <h5 class="ms-3 col-6">Memoria:</h5>
+                        <div class="col-4">
+                          <select class="form-select mx-5" name="requirmentsMin.memory" aria-label="Default select example">
+                            <option selected>Abrir</option>
+                            <option value="2 GB RAM">2 GB RAM</option>
+                            <option value="4 GB RAM">4 GB RAM</option>
+                            <option value="8 GB RAM">8 GB RAM</option>
+                            <option value="16 GB">16 GB</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <h5 class="ms-3 col-6">Tarjeta Gráfica:</h5>
+                        <div class="col-4">
+                          <select class="form-select mx-5" name="requirmentsMin.graphics" aria-label="Default select example">
+                            <option selected>Abrir</option>
+                            <option value="NVIDIA 6600">Nvidia 6600</option>
+                            <option value="NVIDIA GTX 960">Nvidia GTX 960</option>
+                            <option value="NVIDIA GTX 1060">Nvidia GTX 1060</option>
+                            <option value=" ">No requiere</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <h5 class="ms-3 col-6">Direct X:</h5>
+                        <div class="col-4">
+                          <select class="form-select mx-5" name="requirmentsMin.directx" aria-label="Default select example">
+                            <option selected>Abrir</option>
+                            <option value="Version 11">Version 11</option>
+                            <option value="Version 12">Version 12</option>
+                            <option value=" ">No requiere</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <h5 class="ms-3 col-6">Almacenamiento:</h5>
+                        <div class="col-4">
+                          <select class="form-select mx-5" name="requirmentsMin.storage" aria-label="Default select example">
+                            <option selected>Abrir</option>
+                            <option value="200 MB">200 MB</option>
+                            <option value="2 GB">2 GB</option>
+                            <option value="10 GB">10 GB</option>
+                            <option value="20 GB">20 GB</option>
+                            <option value="50 GB">50 GB</option>
+                          </select>
+                        </div>
+                      </div>
+                    </form>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-success" onclick="saveChanges()">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Tabla de Juego -->
+        <div id="gameTable">
+          <table class="table align-middle table-dark table-hover">
+            <thead>
+              <tr>
+                <th scope="col" class="col-1">id</th>
+                <th scope="col" class="col-2">Nombre</th>
+                <th scope="col" class="col-3">Categoría</th>
+                <th scope="col" class="col-3">Descripción</th>
+                <th scope="col" class="col-1">Publicado</th>
+                <th scope="col" class="col-2">Opciones</th>
+              </tr>
+            </thead>
+            <tbody id="gamesOptions">
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="/js/admin.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+  </body>
+</html>

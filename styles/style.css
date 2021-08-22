@@ -1,6 +1,6 @@
 :root{
-  --first: #F5AF19;
-  --second: #F12711;
+  --first: yellow;
+  --second: green;
 }
 *{
   padding: 0;
@@ -19,10 +19,45 @@ body{
     0 6px 20px 0 rgba(0, 0, 0, 0.5);
   color: rgb(255,255,255);
 }
+.reviewText{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  line-clamp: 6;
+  overflow: hidden;
+}
+.reviewTextTable{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  overflow: hidden;
+}
+.reviewTextTable2{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  overflow: hidden;
+}
+
+.modal-content{
+  background: #212529;
+  color:#FFFFFF;
+}
 .row{
   --bs-gutter-x: 0;
 }
 .carousel-control-next, .carousel-control-prev{
   width: 5%;
   opacity: 0;
+}
+.bi{
+  cursor: pointer;
+}
+.star.fav{
+  color: gold;
+}
+table{
+  border-collapse: inherit;
 }

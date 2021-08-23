@@ -1,9 +1,30 @@
 :root{
   --first: #F5AF19;
   --second: #F12711;
+  --gray: #575757;
 }
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+.titleFilter {
+  text-shadow: 1px 1px 10px var(--first);
+  color: black;
+}
+.firstCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color:var(--gray);
+  background-clip: border-box;
+  border: 2px solid var(--first);
+  border-radius: 0.25rem;
+}
+.card-header {
+  border-bottom: 3px solid var(--first) !important;
+}
+
+

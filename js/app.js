@@ -15,4 +15,3 @@ fetch('https://pruebadejuegosmax.free.beeceptor.com/pruebadejuegos')
         
       }
     })
-      

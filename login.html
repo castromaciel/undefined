@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undefinded Games</title>
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body class="bodyLogin">
+  <main class="mainLogin">
+    <div class="contenedorTodo">     
+      <div class="cajaTrasera">
+        <div class="cajaTrasera-register">
+          <h3>¿Aun no tienes una cuenta?</h3>
+          <p>Registrate para poder iniciar sesión</p>
+          <button id="btnRegistrarse">Registrarse</button>
+        </div>
+      </div>  
+    <!--Formulario Login-->
+      <div class="contenedorLogin">
+        <form onsubmit="iniciarSesion(event)" class="formularioLogin">
+          <h2>Iniciar Sesión</h2>
+          <input type="text" placeholder="Nombre de usuario" id="nombre">
+          <input type="password" placeholder="Contraseña" id="contraseña">
+          <button type="submit">Iniciar Sesión</button>
+        </form>
+      </div>   
+    </div>
+  </main>
+  <script src="./js/login.js"></script>
+</body>
+</html>

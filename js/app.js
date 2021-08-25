@@ -76,3 +76,4 @@ function filterFunction(apiGames) {
   filter = new Categories(games)
   filter.allGames()
 }
+    

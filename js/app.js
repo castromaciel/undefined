@@ -1,26 +1,39 @@
-
 class Categories{
   constructor(games){
-  this.games = games;
+    this.games = games;
   }
   filtered (cat , games){
-    console.log(cat, games)
+    this.clearCard()
+    let i = 0;
     let gamesFil = [];
     games.forEach(game => {
-      console.log(game)
       game.categories.forEach (category => {
       if (category == cat){
       gamesFil.push(game)
-      this.cardCreate(gamesFil.images[0], gamesFil.name, gamesFil.description, "https://www.google.com.ar", gamesFil.price )
+      this.cardCreate(gamesFil[i].images[0], gamesFil[i].name, gamesFil[i].description, "https://www.google.com.ar", gamesFil[i].price )
+      i = i+1;
     }
-    console.log(gamesFil)
-    })
+  })
   });
+  }
+  standOut() {
+    this.clearCard()
+    games.forEach(standOut => {
+      if (standOut.outstanding) {
+        this.cardCreate(standOut.images[0], standOut.name, standOut.description, "https://www.google.com.ar", standOut.price)
+      }
+    });
+  } 
+  allGames () {
+    this.clearCard()
+    games.forEach(game => {
+      this.cardCreate(game.images[0], game.name, game.description, "https://www.google.com.ar", game.price)
+    });
   }
   cardCreate (imgS, cardTitle, subTitle, linkButton, price){
     let containerClass = document.getElementById("cardsCont")
     let card = document.createElement('div')
-    card.className = "card col-md-3 p-0"
+    card.className = "card text-white bg-dark col-md-6 col-lg-3 my-1 cardBorder cardShadowFull style=''"
     card.id = "cardName"
     containerClass.appendChild(card)
     let image = document.createElement('img')
@@ -35,32 +48,31 @@ class Categories{
     title.innerText = cardTitle
     cardBody.appendChild(title)
     let subtitle = document.createElement('p')
-    subtitle.className = "card-text"
+    subtitle.className = "card-text cardLine"
     subtitle.innerText = subTitle
     cardBody.appendChild(subtitle)
     let boton = document.createElement('a')
-    boton.className = "btn btn-primary"
+    boton.className = "btn btn-warning"
     boton.innerText = `Comprar $:${price}`
     boton.setAttribute('href', linkButton)
     cardBody.appendChild(boton)
-    console.log("aqui 2")
+  }
+  clearCard (){
+    let element = document.getElementById("cardsCont");
+    while (element.firstChild) {
+    element.removeChild(element.firstChild);
+}
   }
 }
 let games = [];
-
-// const fc = async () => {
-// fetch ('http://localhost:3000/games')
-// .then(response => response.json())
-// .then(apiGames => {
-//   games.push(...apiGames)
-//  })
-// }
-// await fc()
 axios.get('http://localhost:3000/games')
-.then(apiGames => {games.push(...apiGames.data)})
+.then(apiGames => {
+  filterFunction(apiGames)
+})
 
-console.log(games)
-let filter1 = new Categories(games)
-filter1.filtered("Retro", games)
-
-
+let filter;
+function filterFunction(apiGames) {
+  games.push(...apiGames.data)
+  filter = new Categories(games)
+  filter.allGames()
+}

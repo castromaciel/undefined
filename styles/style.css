@@ -1,7 +1,8 @@
 :root{
-  --first: #F5AF19;
-  --second: #F12711;
+  --first: #f5bb3f;
+  --second: #fd432e;
   --gray: #575757;
+  --gray2: #212529;
 }
 *{
   padding: 0;
@@ -12,22 +13,11 @@ body{
   background: linear-gradient(to bottom left, var(--first),var(--second));
 }
 .fondNavbar{
-  /* background-color: var(--first); */
-  background: linear-gradient(90deg ,rgb(0, 0, 1),var(--second), var(--first));
-  border-bottom: 2px;
-
+  background-color: var(--gray2);
 }
-.pageLink{
-  transition: 200ms;
-  border: 0;
-  display: block;
-  padding: 0.5rem 1rem;
-  text-decoration: none;
-  color: black;
-}
-.pageLink:hover{
-  color: white;
-  text-decoration: none;
+.nav-link:hover{
+  transition: 100ms;
+  transform: scale(1.09);
 }
 .hero{
   background: linear-gradient(to bottom right, var(--second),rgb(0, 0, 1));
@@ -123,8 +113,7 @@ table{
   margin-top: 1rem;
 }
 .sectionNews .card-body{
-  /* background: linear-gradient(to bottom left, var(--first),var(--second)); */
-  background: linear-gradient(to bottom right, var(--second),rgb(0, 0, 1));
+  background: var(--gray2);
   border-bottom-right-radius: 20px;
   border-top-left-radius: 20px;
 }
@@ -133,9 +122,7 @@ table{
   padding: 2rem;
 }
 .horizontalNews .card-body{
-  /* background: linear-gradient(to bottom left, var(--first),var(--second)); */
-  background: linear-gradient(to bottom right, var(--second),rgb(0, 0, 1));
-
+  background: var(--gray2);
   border-bottom-right-radius: 20px;
   border-top-left-radius: 20px;
 }

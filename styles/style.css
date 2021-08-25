@@ -9,9 +9,7 @@
 }
 body{
   background: linear-gradient(to bottom left, var(--first),var(--second));
-  height: 100vh;
 }
-
 .fondNavbar{
   background-color: var(--first);
 }
@@ -29,16 +27,54 @@ body{
   text-decoration: none;
   background-color: var(--first);
 }
-
+.hero{
+  background: linear-gradient(to bottom right, var(--second),rgb(0, 0, 1));
+  padding: 5% 0;
+  box-shadow: 
+    4px 8px 10px 0 rgba(0, 0, 0, 0.5),
+    0 6px 20px 0 rgba(0, 0, 0, 0.5);
+  color: rgb(255,255,255);
+}
+.reviewText{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  line-clamp: 6;
+  overflow: hidden;
+}
+.reviewTextTable{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  overflow: hidden;
+}
+.modal-content{
+  background: #212529;
+  color:#FFFFFF;
+}
+.row{
+  --bs-gutter-x: 0;
+}
+.carousel-control-next, .carousel-control-prev{
+  width: 5%;
+  opacity: 0;
+}
+.bi{
+  cursor: pointer;
+}
+.star.fav{
+  color: gold;
+}
+table{
+  border-collapse: inherit;
+}
 footer .container-fluid{ /*Padre: Footer and container-fluid: Hijo!*/
   padding: 0;
 }
 footer a{
   text-decoration: none;
   color: black;
-}
-.footerMargin{
-  margin-top: 5rem;
 }
 .fondSocial{
   background-color: var(--first);

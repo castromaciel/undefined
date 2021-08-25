@@ -11,8 +11,43 @@
     <title>Undefined Games</title>
   </head>
   <body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light fondNavbar fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="./images/undefined.PNG" alt="" width="70" height="50"
+          class="ms-lg-5">
+        </a>
+        <button 
+        class="navbar-toggler" 
+        type="button" 
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav" 
+        aria-controls="navbarNav" 
+        aria-expanded="false" 
+        aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="justify-content-end collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav align-items-end">
+            <li class="nav-item">
+              <a class="fs-4 pageLink" aria-current="page" href="./index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="fs-4 pageLink" href="#">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="fs-4 pageLink" href="#">Registro</a>
+            </li>
+            <li class="nav-item">
+              <a class="fs-4 pageLink" href="#">Noticias</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <main>
-      <section class="bg-dark">
+      <section class="mt-5 pt-5 bg-dark">
         <div class="d-flex flex-row justify-content-between align-items-center align-content-center">
           <h1 class="text-white">Administrar Juegos</h1>
           <!-- Añadir Juego -->
@@ -28,132 +63,130 @@
                   <form id="newGame">
                     <div class="input-group mb-3">
                       <span class="input-group-text" id="basic-addon1">Uf</span>
-                      <input type="text" class="form-control" name="name" placeholder="Nombre del Juego" aria-label="Nombre del Juego">
+                      <input type="text" class="form-control" name="name" id="nameGame" placeholder="Nombre del Juego" aria-label="Nombre del Juego">
                     </div>
                     <div class="input-group mb-3">
                       <span class="input-group-text" id="basic-addon2">$</span>
-                      <input type="text" class="form-control" name="price" placeholder="Precio" aria-label="Precio">
+                      <input type="text" class="form-control" name="price" id="price" placeholder="Precio" aria-label="Precio">
                     </div>
                     <div class="d-flex justify-content-between">
                     </div>
                     <h4>Categorías</h4>
                     <div>
-                      <select class="form-select mb-3" id="categoriesGame" name="categories" multiple="multiple" aria-label="multiple select example">
+                      <select class="form-select mb-3" name="categories" id="categories" multiple="multiple" aria-label="multiple select example">
                         <option selected>Abrir</option>
-                        <option value="Free">Free</option>
-                        <option value="FPS">FPS</option>
-                        <option value="Multijugador">Multijugador</option>
-                        <option value="Estrategia">Estrategia</option>
-                        <option value="MOBA">MOBA</option>
-                        <option value="Rol">Rol</option>
-                        <option value="Mundo Abierto">Mundo Abierto</option>
-                        <option value="RV">RV</option>
-                        <option value="Aventuras">Aventuras</option>
-                        <option value="Ritmo">Ritmo</option>
-                        <option value="Música">Música</option>
                         <option value="Acción">Acción</option>
-                        <option value="Sangriento">Sangriento</option>
-                        <option value="Exploración">Exploración</option>
-                        <option value="Ciencia Ficción">Ciencia Ficción</option>
-                        <option value="JcJ (PvP)">JcJ (PvP)</option>
+                        <option value="Aventuras">Aventuras</option>
                         <option value="Batalla Real">Batalla Real</option>
-                        <option value="Disparos">Disparos</option>
-                        <option value="Zombie">Zombie</option>
-                        <option value="Familiar">Familiar</option>
-                        <option value="Comida">Comida</option>
+                        <option value="Ciencia Ficción">Ciencia Ficción</option>
                         <option value="Clásico">Clásico</option>
+                        <option value="Comida">Comida</option>
+                        <option value="Disparos">Disparos</option>
+                        <option value="Estrategia">Estrategia</option>
+                        <option value="Exploración">Exploración</option>
+                        <option value="Familiar">Familiar</option>
+                        <option value="FPS">FPS</option>
+                        <option value="Free">Free</option>
+                        <option value="JcJ (PvP)">JcJ (PvP)</option>
+                        <option value="Multijugador">Multijugador</option>
+                        <option value="Mundo Abierto">Mundo Abierto</option>
+                        <option value="Música">Música</option>
+                        <option value="MOBA">MOBA</option>
                         <option value="Retro">Retro</option>
+                        <option value="Ritmo">Ritmo</option>
+                        <option value="Rol">Rol</option>
+                        <option value="RV">RV</option>
+                        <option value="Sangriento">Sangriento</option>
+                        <option value="Zombie">Zombie</option>
                       </select>
                     </div>
                     <h4>Descripción</h4>
                     <div class="mb-3">
-                      <textarea class="form-control" name="description" id="" rows="3"></textarea>
+                      <textarea class="form-control" name="description" id="description" rows="3"></textarea>
                     </div>
                     <h4 class="mb-3">Requerimentos Mínimos</h4>
-                    <form id="requirmentsMin">
-                      <div class="row mb-3">
-                        <h5 class="ms-3 col-6">So:</h5>
-                        <div class="col-4">
-                          <select class="form-select mx-5" name="requirmentsMin.so" aria-label="Default select example">
-                            <option selected>Abrir</option>
-                            <option value="Widnows 7">Widnows 7</option>
-                            <option value="Windows 10">Windows 10</option>
-                          </select>
-                        </div>
+                    <div class="row mb-3">
+                      <h5 class="ms-3 col-6">So:</h5>
+                      <div class="col-4">
+                        <select class="form-select mx-5" name="so" id="so" aria-label="Default select example">
+                          <option selected>Abrir</option>
+                          <option value="Widnows 7">Widnows 7</option>
+                          <option value="Windows 10">Windows 10</option>
+                        </select>
                       </div>
-                      <div class="row mb-3">
-                        <h5 class="ms-3 col-6">Procesador:</h5>
-                        <div class="col-4">
-                          <select class="form-select mx-5" name="requirmentsMin.processor" aria-label="Default select example">
-                            <option selected>Abrir</option>
-                            <option value="Intel Core2 Duo">Intel Core2 Duo</option>
-                            <option value="Intel core i5">Intel core i5</option>
-                            <option value="Intel core i7">Intel core i7</option>
-                          </select>
-                        </div>
+                    </div>
+                    <div class="row mb-3">
+                      <h5 class="ms-3 col-6">Procesador:</h5>
+                      <div class="col-4">
+                        <select class="form-select mx-5" name="processor" id="processor" aria-label="Default select example">
+                          <option selected>Abrir</option>
+                          <option value="Intel Core2 Duo">Intel Core2 Duo</option>
+                          <option value="Intel core i5">Intel core i5</option>
+                          <option value="Intel core i7">Intel core i7</option>
+                        </select>
                       </div>
-                      <div class="row mb-3">
-                        <h5 class="ms-3 col-6">Memoria:</h5>
-                        <div class="col-4">
-                          <select class="form-select mx-5" name="requirmentsMin.memory" aria-label="Default select example">
-                            <option selected>Abrir</option>
-                            <option value="2 GB RAM">2 GB RAM</option>
-                            <option value="4 GB RAM">4 GB RAM</option>
-                            <option value="8 GB RAM">8 GB RAM</option>
-                            <option value="16 GB">16 GB</option>
-                          </select>
-                        </div>
+                    </div>
+                    <div class="row mb-3">
+                      <h5 class="ms-3 col-6">Memoria:</h5>
+                      <div class="col-4">
+                        <select class="form-select mx-5" name="memory" id="memory" aria-label="Default select example">
+                          <option selected>Abrir</option>
+                          <option value="2 GB RAM">2 GB RAM</option>
+                          <option value="4 GB RAM">4 GB RAM</option>
+                          <option value="8 GB RAM">8 GB RAM</option>
+                          <option value="16 GB">16 GB</option>
+                        </select>
                       </div>
-                      <div class="row mb-3">
-                        <h5 class="ms-3 col-6">Tarjeta Gráfica:</h5>
-                        <div class="col-4">
-                          <select class="form-select mx-5" name="requirmentsMin.graphics" aria-label="Default select example">
-                            <option selected>Abrir</option>
-                            <option value="NVIDIA 6600">Nvidia 6600</option>
-                            <option value="NVIDIA GTX 960">Nvidia GTX 960</option>
-                            <option value="NVIDIA GTX 1060">Nvidia GTX 1060</option>
-                            <option value=" ">No requiere</option>
-                          </select>
-                        </div>
+                    </div>
+                    <div class="row mb-3">
+                      <h5 class="ms-3 col-6">Tarjeta Gráfica:</h5>
+                      <div class="col-4">
+                        <select class="form-select mx-5" name="graphics" id="graphics" aria-label="Default select example">
+                          <option selected>Abrir</option>
+                          <option value="NVIDIA 6600">Nvidia 6600</option>
+                          <option value="NVIDIA GTX 960">Nvidia GTX 960</option>
+                          <option value="NVIDIA GTX 1060">Nvidia GTX 1060</option>
+                          <option value=" ">No requiere</option>
+                        </select>
                       </div>
-                      <div class="row mb-3">
-                        <h5 class="ms-3 col-6">Direct X:</h5>
-                        <div class="col-4">
-                          <select class="form-select mx-5" name="requirmentsMin.directx" aria-label="Default select example">
-                            <option selected>Abrir</option>
-                            <option value="Version 11">Version 11</option>
-                            <option value="Version 12">Version 12</option>
-                            <option value=" ">No requiere</option>
-                          </select>
-                        </div>
+                    </div>
+                    <div class="row mb-3">
+                      <h5 class="ms-3 col-6">Direct X:</h5>
+                      <div class="col-4">
+                        <select class="form-select mx-5" name="directx" id="directx" aria-label="Default select example">
+                          <option selected>Abrir</option>
+                          <option value="Version 11">Version 11</option>
+                          <option value="Version 12">Version 12</option>
+                          <option value=" ">No requiere</option>
+                        </select>
                       </div>
-                      <div class="row mb-3">
-                        <h5 class="ms-3 col-6">Almacenamiento:</h5>
-                        <div class="col-4">
-                          <select class="form-select mx-5" name="requirmentsMin.storage" aria-label="Default select example">
-                            <option selected>Abrir</option>
-                            <option value="200 MB">200 MB</option>
-                            <option value="2 GB">2 GB</option>
-                            <option value="10 GB">10 GB</option>
-                            <option value="20 GB">20 GB</option>
-                            <option value="50 GB">50 GB</option>
-                          </select>
-                        </div>
+                    </div>
+                    <div class="row mb-3">
+                      <h5 class="ms-3 col-6">Almacenamiento:</h5>
+                      <div class="col-4">
+                        <select class="form-select mx-5" name="storage" id="storage" aria-label="Default select example">
+                          <option selected>Abrir</option>
+                          <option value="200 MB">200 MB</option>
+                          <option value="2 GB">2 GB</option>
+                          <option value="10 GB">10 GB</option>
+                          <option value="20 GB">20 GB</option>
+                          <option value="50 GB">50 GB</option>
+                        </select>
                       </div>
-                    </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                      <button type="submit" class="btn btn-success" onclick="saveChanges(nameGame,price,categories,description,so,processor,memory,graphics,directx,storage)">Guardar Cambios</button>
+                    </div>
                   </form>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-success" onclick="saveChanges()">Save changes</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <!-- Tabla de Juego -->
-        <div id="gameTable">
-          <table class="table align-middle table-dark table-hover">
+        <div class="table-responsive" id="gameTable">
+          <table class="table table-dark table-hover">
             <thead>
               <tr>
                 <th scope="col" class="col-1">id</th>
@@ -170,9 +203,34 @@
         </div>
       </section>
     </main>
-    
+    <!-- Footer -->
+    <footer>
+      <div class="container-fluid footerMargin">
+        <div class="row">
+          <div class=" col-12 col-sm-6 fondSocial justify-content-center align-items-center">
+            <div class="d-flex justify-content-evenly"> <!--No funcionaba el justify xq no tenia d-flex-->
+              <a href=""> <!--Enviar a pag 404-->
+                <i class="bi bi-instagram"></i>
+              </a>
+              <i class="bi bi-twitch"></i>
+              <i class="bi bi-facebook"></i>
+              <i class="bi bi-whatsapp"></i>
+              <i class="bi bi-youtube"></i>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 bg-white d-flex justify-content-center align-items-center">
+            <span><a href="">Acerca de Nosotros</a></span> |
+            <span><a href="">Contacto</a></span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 bg-secondary d-flex justify-content-center align-items-center">
+            <p class="text-white mb-0">Undefined © 2021 Todos los derechos reservados</p>
+          </div>
+        </div>
+      </div>
+    </footer>
     <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="/js/admin.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
   </body>

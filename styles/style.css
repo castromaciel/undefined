@@ -11,8 +11,6 @@ body{
   background: linear-gradient(to bottom left, var(--first),var(--second));
   height: 100vh;
 }
-<<<<<<< HEAD
-=======
 .hero{
   background: linear-gradient(to bottom right, var(--second),rgb(0, 0, 1));
   padding: 5% 0;
@@ -135,7 +133,6 @@ body{
   
 
 
->>>>>>> 5ad42bc5585b9a6382f88c1230e9981cc05e98b8
 
 .fondNavbar{
   background-color: var(--first);

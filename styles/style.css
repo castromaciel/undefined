@@ -133,3 +133,35 @@ body{
   
 
 
+
+.fondNavbar{
+  background-color: var(--first);
+}
+.pageLink{
+  transition: 200ms;
+  background-color: var(--first);
+  border: 0;
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: black;
+}
+.pageLink:hover{
+  color: white;
+  text-decoration: none;
+  background-color: var(--first);
+}
+
+footer .container-fluid{ /*Padre: Footer and container-fluid: Hijo!*/
+  padding: 0;
+}
+footer a{
+  text-decoration: none;
+  color: black;
+}
+.footerMargin{
+  margin-top: 5rem;
+}
+.fondSocial{
+  background-color: var(--first);
+}

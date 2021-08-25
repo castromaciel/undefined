@@ -26,8 +26,8 @@
         aria-controls="navbarNav" 
         aria-expanded="false" 
         aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <span class="navbar-toggler-icon"></span>
+      </button>
       <div class="justify-content-end collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav align-items-end">
               <li class="nav-item">
@@ -43,10 +43,56 @@
                 <a class="fs-4 pageLink" href="#">Noticias</a>
               </li>
             </ul>
-        </div>
+          </div>
       </div>
     </nav>
-    <!-- Hero -->
+    <!-- Categories -->
+    <section class="my-5 py-5">
+      <div class="firstCard text-center boxShadowFull container">
+        <div class="card-header">
+          <ul class="nav nav-pills card-header-pills justify-content-between">
+            <li>
+              <h3 class="titleFilter">Explorá UndefinedGames</h3>
+            </li>
+            <li>
+              <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                <button type="button" class="btn btn-warning" onclick="filter.allGames()" >Todos</button>
+                <button type="button" onclick="filter.standOut()" class="btn btn-warning">Destacados</button>
+                <div class="btn-group" role="group">
+                  <button id="btnGroupDrop1" type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    Categorias
+                  </button>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="btnGroupDrop1">
+                  <li><a class="dropdown-item" onclick="filter.filtered ('Acción' , games)" href="#">Acción</a></li>
+                  <li><a class="dropdown-item" onclick="filter.filtered ('Aventuras' , games)" href="#">Aventuras</a></li>
+                  <li><a class="dropdown-item" onclick="filter.filtered ('Batalla Real' , games)" href="#">Batalla Real</a></li>
+                  <li><a class="dropdown-item" onclick="filter.filtered ('Ciencia ficción' , games)" href="#">Ciencia ficción</a></li>
+                  <li><a class="dropdown-item" onclick="filter.filtered ('Clasico' , games)" href="#">Clasico</a></li>
+                  <li><a class="dropdown-item" onclick="filter.filtered ('Disparos' , games)" href="#">Disparos</a></li>
+                  <li><a class="dropdown-item" onclick="filter.filtered ('Estrategia' , games)" href="#">Estrategia</a></li>
+                  <li><a class="dropdown-item" onclick="filter.filtered ('Exploración' , games)" href="#">Exploración </a></li>
+                  <li><a class="dropdown-item" onclick="filter.filtered ('Familiar' , games)" href="#">Familiar</a></li>
+                  <li><a class="dropdown-item" onclick="filter.filtered ('FPS' , games)" href="#">FPS</a></li>
+                  <li><a class="dropdown-item" onclick="filter.filtered ('Free' , games)" href="#">Free</a></li>
+                  <li><a class="dropdown-item" onclick="filter.filtered ('JcJ (PvP)' , games)" href="#">JcJ (PvP)</a></li>
+                  <li><a class="dropdown-item" onclick="filter.filtered ('Moba' , games)" href="#">Moba</a></li>
+                  <li><a class="dropdown-item" onclick="filter.filtered ('Multijugador' , games)" href="#">Multijugador</a></li>
+                  <li><a class="dropdown-item" onclick="filter.filtered ('Mundo abierto' , games)" href="#">Mundo abierto</a></li>
+                  <li><a class="dropdown-item" onclick="filter.filtered ('Música' , games)" href="#">Música</a></li>
+                  <li><a class="dropdown-item" onclick="filter.filtered ('Retro' , games)" href="#">Retro</a></li>
+                  <li><a class="dropdown-item" onclick="filter.filtered ('Ritmo' , games)" href="#">Ritmo</a></li>
+                  <li><a class="dropdown-item" onclick="filter.filtered ('Rol' , games)" href="#">Rol</a></li>
+                  <li><a class="dropdown-item" onclick="filter.filtered ('RV' , games)" href="#">RV</a></li>
+                  <li><a class="dropdown-item" onclick="filter.filtered ('Sangriento' , games)" href="#">Sangriento</a></li>
+                  <li><a class="dropdown-item" onclick="filter.filtered ('Zombie' , games)" href="#">Zombie</a></li>
+                </div>
+              </div>
+              </ul>
+              <div class="card-body row justify-content-center g-0" id="cardsCont">
+                <!-- here are the cards  -->
+                </div>
+              </div>
+            </section>
     <!--Noticias-->
     <div class="sectionNews">
       <div class="card-group">
@@ -113,21 +159,14 @@
               <i class="bi bi-whatsapp"></i>
               <i class="bi bi-youtube"></i>
             </div>
-          </div>
-          <div class="col-12 col-sm-6 bg-white d-flex justify-content-center align-items-center">
-            <span><a href="">Acerca de Nosotros</a></span> |
-            <span><a href="">Contacto</a></span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12 bg-secondary d-flex justify-content-center align-items-center">
-            <p class="text-white">Undefined © 2021 Todos los derechos reservados</p>
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
-    </footer>
+    <!-- Hero -->
+    
     <!-- Scripts -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="/js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
   </body>
-</html>
+  </html>

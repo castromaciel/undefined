@@ -3,16 +3,11 @@ const admin = {
   contraseña : 'admin',
   email : 'none'
 }
-
 const usuarios = JSON.parse(localStorage.getItem('usuariosKey')) || [admin]
-
-
 const iniciarSesion = (e) => {
   e.preventDefault()
-
   let nombre = document.getElementById('nombre').value
   let contraseña = document.getElementById('contraseña').value
-  
   if( nombre !== '' && contraseña !== ''){
     for(const usuario of usuarios){
       if(usuario.nombre === nombre && usuario.contraseña === contraseña){
@@ -31,5 +26,4 @@ const iniciarSesion = (e) => {
     }
 
   }
-
 }

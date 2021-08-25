@@ -1,0 +1,32 @@
+:root{
+  --first: #F5AF19;
+  --second: #F12711;
+}
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+header{
+  background-color: white;
+  text-align: center;
+}
+.fondMain{
+  background-image: url(../images/imageacercade/paisajedinosauriogoogle.jpg);
+}
+.cardSize{
+  width: 18rem;
+}
+footer .container-fluid{ /*Padre: Footer and container-fluid: Hijo!*/
+  padding: 0;
+}
+footer a{
+  text-decoration: none;
+  color: black;
+}
+.footerMargin{
+  margin-top: 5rem;
+}
+.fondSocial{
+  background-color: var(--first);
+}

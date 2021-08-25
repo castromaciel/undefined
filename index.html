@@ -1,56 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Styles -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="/styles/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <title>Undefined Games</title>
   </head>
-  <body>
+  <body> 
     <!--Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-light fondNavbar fixed-top">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img src="./images/undefined.PNG" alt="" width="70" height="50"
-          class="ms-lg-5">
-        </a>
-        <button 
-        class="navbar-toggler" 
-        type="button" 
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav" 
-        aria-controls="navbarNav" 
-        aria-expanded="false" 
-        aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      <div class="justify-content-end collapse navbar-collapse" id="navbarNav">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark fondNavbar fixed-top" id="nav">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <!-- <i class="fs-3 ms-3 text-white bi bi-search">UndefinedGames</i> -->
+            <img src="/images/logo.png" alt="" width="80" height="50"
+            class="ms-lg-5">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="justify-content-end collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav align-items-end">
-              <li class="nav-item">
-                <a class="fs-4 pageLink" aria-current="page" href="./index.html">Inicio</a>
+              <li class="nav-item me-4">
+                <a class="fs-4 nav-link active" aria-current="page" href="./index.html">Inicio</a>
               </li>
-              <li class="nav-item">
-                <a class="fs-4 pageLink" href="#">Login</a>
+              <li class="nav-item me-4">
+                <a class="fs-4 nav-link active" href="/html/login.html">Login</a>
               </li>
-              <li class="nav-item">
-                <a class="fs-4 pageLink" href="#">Registro</a>
+              <li class="nav-item me-4">
+                <a class="fs-4 nav-link active" href="/html/register.html">Registro</a>
               </li>
-              <li class="nav-item">
-                <a class="fs-4 pageLink" href="#">Noticias</a>
+              <li class="nav-item me-4">
+                <a class="fs-4 nav-link active" href="#noticias">Noticias</a>
               </li>
             </ul>
+          </div>
         </div>
-      </div>
-    </nav>
-    <!-- Hero -->
+      </nav>
+    </header>
+    <main>
+      <!-- Hero -->
+      <section class="mt-5 pt-4 px-lg-3 px-md-3">
+        <h2 class="m-4 fs-1">Destacados</h2>
+        <div id="carouselExampleFade" class="m-4 hero carousel slide carousel-fade" data-bs-ride="carousel">
+          <div class="container carousel-inner" id="createCarousel">
+            <!-- createCarousel -->
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+      <!-- Categories -->
+      <section class="my-5 py-5">
+        <div class="firstCard text-center boxShadowFull container">
+          <div class="card-header">
+            <ul class="nav nav-pills card-header-pills justify-content-between">
+              <li>
+                <h3 class="titleFilter">Explorá UndefinedGames</h3>
+              </li>
+              <li>
+                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                  <button type="button" class="btn btn-warning" onclick="filter.allGames()">Todos</button>
+                  <button type="button" onclick="filter.standOut()" class="btn btn-warning">Destacados</button>
+                  <div class="btn-group" role="group">
+                    <button id="btnGroupDrop1" type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                      Categorias
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="btnGroupDrop1">
+                      <li><a class="dropdown-item" onclick="filter.filtered ('Acción' , games)" href="#">Acción</a></li>
+                      <li><a class="dropdown-item" onclick="filter.filtered ('Aventuras' , games)" href="#">Aventuras</a></li>
+                      <li><a class="dropdown-item" onclick="filter.filtered ('Batalla Real' , games)" href="#">Batalla Real</a></li>
+                      <li><a class="dropdown-item" onclick="filter.filtered ('Ciencia ficción' , games)" href="#">Ciencia ficción</a></li>
+                      <li><a class="dropdown-item" onclick="filter.filtered ('Clasico' , games)" href="#">Clasico</a></li>
+                      <li><a class="dropdown-item" onclick="filter.filtered ('Disparos' , games)" href="#">Disparos</a></li>
+                      <li><a class="dropdown-item" onclick="filter.filtered ('Estrategia' , games)" href="#">Estrategia</a></li>
+                      <li><a class="dropdown-item" onclick="filter.filtered ('Exploración' , games)" href="#">Exploración </a></li>
+                      <li><a class="dropdown-item" onclick="filter.filtered ('Familiar' , games)" href="#">Familiar</a></li>
+                      <li><a class="dropdown-item" onclick="filter.filtered ('FPS' , games)" href="#">FPS</a></li>
+                      <li><a class="dropdown-item" onclick="filter.filtered ('Free' , games)" href="#">Free</a></li>
+                      <li><a class="dropdown-item" onclick="filter.filtered ('JcJ (PvP)' , games)" href="#">JcJ (PvP)</a></li>
+                      <li><a class="dropdown-item" onclick="filter.filtered ('Moba' , games)" href="#">Moba</a></li>
+                      <li><a class="dropdown-item" onclick="filter.filtered ('Multijugador' , games)" href="#">Multijugador</a></li>
+                      <li><a class="dropdown-item" onclick="filter.filtered ('Mundo abierto' , games)" href="#">Mundo abierto</a></li>
+                      <li><a class="dropdown-item" onclick="filter.filtered ('Música' , games)" href="#">Música</a></li>
+                      <li><a class="dropdown-item" onclick="filter.filtered ('Retro' , games)" href="#">Retro</a></li>
+                      <li><a class="dropdown-item" onclick="filter.filtered ('Ritmo' , games)" href="#">Ritmo</a></li>
+                      <li><a class="dropdown-item" onclick="filter.filtered ('Rol' , games)" href="#">Rol</a></li>
+                      <li><a class="dropdown-item" onclick="filter.filtered ('RV' , games)" href="#">RV</a></li>
+                      <li><a class="dropdown-item" onclick="filter.filtered ('Sangriento' , games)" href="#">Sangriento</a></li>
+                      <li><a class="dropdown-item" onclick="filter.filtered ('Zombie' , games)" href="#">Zombie</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="card-body row justify-content-center g-0" id="cardsCont">
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="mt-5 pt-4 px-lg-3 px-md-3" id="noticias">
+        <h2 class="m-4 fs-1">Noticias</h2>
+        <div class="sectionNews m-4">
+          <div class="card-group">
+            <div class="card">
+              <img src="./images/Noticias/callofduty.jpeg" class="card-img-top" alt="...">
+              <div class="card-body text-white">
+                <h3 class="card-title"> Call of Duty: Vanguard nos llevará a participar en la Segunda Guerra Mundial en noviembre</h3>
+                <p class="card-text"> <h5>La nueva entrega de la saga nos brindará una espectacular campaña acompañada por una buena cantidad de novedades en su multijugador. <br><br><details> <summary></summary> Activision ha cumplido con su promesa y hace unos instantes todos aquellos jugadores de Call of Duty Warzone han podido ver un adelanto de Call of Duty: Vanguard, la próxima entrega de la saga, lo que nos ha permitido conocer más detalles acerca de este nuevo Call of Duty cuyo desarrollo correrá a cargo de Sledgehammer Games. Como ya se veía venir, la franquicia volverá a apostar por una acción ambientada en la Segunda Guerra Mundial, como ya sucedió hace unos años con Call of Duty WWII, aunque en esta ocasión habrá unas cuantas novedades argumentales en la campaña. <br> Desde luego Call of Duty: Vanguard quiere tirar la casa por la ventana y eso es algo que Activision y Sledgehammer Games dejarán claro a lo largo de las próximas semanas a medida que vayan proporcionado más información sobre el juego. Su lanzamiento se producirá el 5 de noviembre en PS4, PS5, Xbox One, Xbox Series X/S y PC a través de Undefined Games. </h5> </details></p>
+                <p class="card-text"><small class="text-muted">Última actualización hace 3 horas</small></p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="./images/Noticias/tarjetagrafica.jpeg" class="card-img-top" alt="...">
+              <div class="card-body text-white">
+                <h3 class="card-title">El suministro de tarjetas gráficas de Nvidia seguirá siendo escaso en 2022, tal y como ha advertido su CEO </h3>
+                <p class="card-text"> <h5>Uno de los grandes problemas que arrastra la industria tecnológica y electrónica en los últimos tiempos es la ausencia de componentes. <br><br><details>  <summary></summary>  Está siendo realmente complicado para las empresas conseguir los recursos necesarios para fabricar sus productos.El resultado es una demanda enorme para una oferta realmente escasa. Esta situación que lleva prolongándose durante tanto tiempo, parece que permanecerá igual, por lo menos en los que respecta a las tarjetas gráficas RTX de Nvidia. <br> Activision ha cumplido con su promesa y hace unos instantes todos aquellos jugadores de Call of Duty Warzone han podido ver un adelanto de Call of Duty: Vanguard, la próxima entrega de la saga, lo que nos ha permitido conocer más detalles acerca de este nuevo Call of Duty cuyo desarrollo correrá a cargo de Sledgehammer Games. Como ya se veía venir, la franquicia volverá a apostar por una acción ambientada en la Segunda Guerra Mundial, como ya sucedió hace unos años con Call of Duty WWII, aunque en esta ocasión habrá unas cuantas novedades argumentales en la campaña. <br> Desde luego Call of Duty: Vanguard quiere tirar la casa por la ventana y eso es algo que Activision y Sledgehammer Games dejarán claro a lo largo de las próximas semanas a medida que vayan proporcionado más información sobre el juego. Su lanzamiento se producirá el 5 de noviembre en PS4, PS5, Xbox One, Xbox Series X/S y PC a través de Undefined Games.</h5> </details> </p>  
+                <p class="card-text"><small class="text-muted">Última actualización hace 1 día</small></p>
+              </div>
+            </div>
+          </div> 
+        </div>
+        <div class="horizontalNews">      
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="cardImg, col-lg-3">
+                  <img src="./images/Noticias/fifa.jpg" class="img-fluid rounded-start" alt="">
+                </div>
+                <div class="col-lg-9">
+                  <div class="card-body text-white">
+                    <h5 class="card-title">FIFA 22 renueva el fútbol callejero con un modo Arcade, fútbol tenis y más novedades</h5>
+                    <p class="card-text">FIFA 22 anuncia novedades en el modo Volta, como se conoce a la propuesta de fútbol callejero presente en el nuevo simulador de EA Sports, que se caracteriza por ofrecer una jugabilidad diferente a los tradicionales encuentros de once contra once. En esta entrega, el nuevo modo Volta busca destacar el estilo de los jugadores y ofrecer nuevos desafíos más creativos y divertidos. <br> El FIFA 22 en modo Volta busca recompensar las características individuales de los jugadores, ya que premiará con puntos los pases precisos, además de las gambetas y trucos que se realicen de forma combinada con las paredes. A su vez, también contará con nuevas formas de contar la barra de habilidad, junto a una personalización de algunas de las destrezas que tenga el jugador durante la partida, como potenciar el disparo, la velocidad o el quite de pelotas.
+                    </p>
+                    <p class="card-text"><small class="text-muted">Última actualización hace 2 días</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>  
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="cardImg, col-lg-3">
+                  <img src="./images/Noticias/razer.jpg" class="img-fluid rounded-start" alt="">
+                </div>
+                <div class="col-lg-9">
+                  <div class="card-body text-white">
+                    <h5 class="card-title">Razer Invitational está de regreso en LATAM</h5>
+                    <p class="card-text">Razer, la marca mundial con periféricos hechos por gamers para gamers, anunció hoy la segunda edición del Razer Invitational - LATAM. Este evento tendrá un formato online y estará abierto a cualquier interesado. Este año el torneo regresa con más fuerza, pues además de Argentina, Brasil, Chile, México, Paraguay y Uruguay, la convocatoria llegará a Colombia y Perú. Razer dice que cada año integrará nuevos países de Latinoamérica al evento. </p> <br> <br> <br><br>              
+                    <p class="card-text"><small class="text-muted">Última actualización hace 5 días</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>  
+        </div>
+      </section>
+    </main> 
+    <!--Noticias-->
+      <!-- Fin Noticias-->    
     <footer>
       <div class="container-fluid footerMargin">
         <div class="row">
-          <div class=" col-12 col-sm-6 fondSocial justify-content-center align-items-center">
+          <div class=" col-12 col-sm-6 fondSocial justif y-content-center align-items-center">
             <div class="d-flex justify-content-evenly"> <!--No funcionaba el justify xq no tenia d-flex-->
               <a href=""> <!--Enviar a pag 404-->
                 <i class="bi bi-instagram"></i>
@@ -62,18 +180,19 @@
             </div>
           </div>
           <div class="col-12 col-sm-6 bg-white d-flex justify-content-center align-items-center">
-            <span><a href="">Acerca de Nosotros</a></span> |
-            <span><a href="">Contacto</a></span>
+            <span><a href="/html/acercade.html">Acerca de Nosotros </a></span> |
+            <span><a href=""> Contacto</a></span>
           </div>
         </div>
         <div class="row">
           <div class="col-12 bg-secondary d-flex justify-content-center align-items-center">
-            <p class="text-white">Undefined © 2021 Todos los derechos reservados</p>
+            <p class="text-white mb-0">Undefined © 2021 Todos los derechos reservados</p>
           </div>
-        </div>
+        </div>    
       </div>
-    </footer>
+    </footer> 
     <!-- Scripts -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="/js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
   </body>

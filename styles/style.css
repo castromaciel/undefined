@@ -19,6 +19,10 @@ body{
   transition: 100ms;
   transform: scale(1.09);
 }
+.nav-btn{
+  border: none;
+  background: none;
+}
 .hero{
   background: linear-gradient(to bottom right,rgb(0, 0, 1), var(--second));
   padding: 5% 0;

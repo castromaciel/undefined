@@ -1,17 +1,51 @@
 let url = 'http://localhost:3000/games';
 let allGames = [];
-let tableGames = document.getElementById('gamesOptions');
-let fav;
-let star;
-let nameGame;
-const form = document.getElementById('newGame')
-form.addEventListener('submit',  (event) => {
-  event.preventDefault()
-})
 fetch(url)
   .then(response => response.json())
   .then(games =>{chargingGames(games)})
 
+let tableGames = document.getElementById('gamesOptions');
+let urlImages = document.getElementById('urlImages')
+let arrayUrlImages = [];
+let longUrlImages = arrayUrlImages.length
+let fav;
+let star;
+let nameGame;
+let count = 1;
+const form = document.getElementById('newGame')
+form.addEventListener('submit',  (event) => {
+  event.preventDefault()
+}) 
+let usuario =  JSON.parse(localStorage.getItem('usuarioLogeado'))
+let user = document.getElementById('users')
+let loginAdmin = document.getElementById('loginAdmin')
+let registerAdmin = document.getElementById('registerAdmin')
+if (usuario === null) {
+}else if(usuario.nombre === 'Admin'){
+  let adminNav = document.createElement('li')
+  adminNav.classList = 'nav-item me-4'
+  adminNav.innerHTML = `
+    <a class="fs-4 nav-link active" aria-current="page" href="/html/admin.html">Admin</a>
+    `;
+  let closeAccount = document.createElement('li')
+  closeAccount.classList = 'nav-item me-4'
+  closeAccount.innerHTML = `
+    <button class="fs-4 nav-link active nav-btn" type="button" aria-current="page" onclick="closeAccount()">Cerrar sesión</button>
+    `;
+  user.appendChild(adminNav)
+  user.appendChild(closeAccount)
+  user.removeChild(loginAdmin)
+  user.removeChild(registerAdmin)
+}else{
+  let closeAccount = document.createElement('li')
+  closeAccount.classList = 'nav-item me-4'
+  closeAccount.innerHTML = `
+    <button type="button" class="fs-4 nav-link active nav-btn" aria-current="page" on>Cerrar sesión</button>
+    `;
+  user.appendChild(closeAccount)
+  user.removeChild(registerAdmin)
+  user.removeChild(loginAdmin)  
+}
 function chargingGames(gamesList) {
   allGames.push(...gamesList);
   allGames.forEach(game => {
@@ -108,6 +142,7 @@ function chargingGames(gamesList) {
   })  
 }
 function saveChanges(nameGame,price,categories,description) { 
+
   let options = categories && categories.options;
   let categoriesSelected = [];
   for (const key in options) {
@@ -138,14 +173,16 @@ function saveChanges(nameGame,price,categories,description) {
     this.price = precio;
     this.categories = categoria;
     this.description = descripcion;
+    this.images = arrayUrlImages;
     this.requirementsMin = requisMin;
     this.outstanding = false;
   }
   let savedNameGame = nameGame.value;
   let savedPriceGame = price.value;
   let savedCategoriesGame = categoriesSelected;
+  let savedImagesGame = arrayUrlImages;
   let savedDescriptionGame = description.value;
-  let newGame = new generateNewGame(savedNameGame,savedPriceGame,savedCategoriesGame,savedDescriptionGame,requirementsMin);
+  let newGame = new generateNewGame(savedNameGame,savedPriceGame,savedCategoriesGame,savedDescriptionGame,savedImagesGame,requirementsMin);
   if(confirm('¿Estás seguro de que quieres agregar un nuevo Juego?')){
     fetch(url,{
       method: 'POST',
@@ -156,6 +193,8 @@ function saveChanges(nameGame,price,categories,description) {
     })
       .then(res => res.json())
     alert('El juego se a agregado con éxito')
+    window.location.replace('/html/admin.html')
+
   }else{
     alert('Ha ocurrido un Error')
   }
@@ -164,7 +203,7 @@ function markAsFav(game){
   star = document.getElementById(`${game.id}`)
   fav = star.classList[0]
   if (fav === 'true'){
-    if (confirm(`¿Desea eliminar de destacados el elemento con id=${star.id}`)) {
+    if (confirm(`¿Desea eliminar de destacados el elemento`)) {
       star.classList.remove('fav');
       star.classList.replace('true', 'false')
       fetch(url+'/'+star.id,{
@@ -179,7 +218,7 @@ function markAsFav(game){
       alert('Acción realizada con éxito')
     }
   }else{
-    if(confirm(`¿Desea destacar el elemento con id=${star.id}`)){
+    if(confirm(`¿Desea destacar el elemento`)){
       star.classList.add('fav')
       star.classList.replace('false', 'true')
       fetch(url+'/'+star.id,{
@@ -197,14 +236,15 @@ function markAsFav(game){
 }
 function deleteGame(game){
   nameGame = document.getElementById(`${game.id}`)
-  if (confirm(`¿Estás realmente seguro de que quieres eliminar el elemento con id=${nameGame.id}?`)) {
+  if (confirm(`¿Estás realmente seguro de que quieres eliminar el elemento?`)) {
     fetch(url + '/'+nameGame.id ,{
       method: 'DELETE',
       headers: {
         'content-type': 'application/json; charset=UTF-8',
       }
     })
-    alert(`El elemento con id=${nameGame.id} ha sido borrado con éxito`);
+    alert(`El elemento con ha sido borrado con éxito`);
+    window.location.replace('/html/admin.html')
   }
 }
 function editedGames(editName,editPrice,editCategorie,editDescription,idGame){
@@ -236,7 +276,34 @@ function editedGames(editName,editPrice,editCategorie,editDescription,idGame){
       }
     })
     alert('Acción realizada con éxito')
+    window.location.replace('/html/admin.html')
   }else{
     alert('Ha ocurrido un error')
   }
+}
+function closeAccount(){
+  localStorage.removeItem("usuarioLogeado");
+  window.location.replace('/index.html');
+}
+
+function addImageUrl() {
+  let inputUrl = document.createElement('div')
+  inputUrl.innerHTML =`
+  <input type="text" class="form-control mb-3" name="images${count}" id="${count}" onkeyup="keyDown(event)" placeholder="Inserte URL" aria-label="Inserte URL">
+  `;
+  count +=1;
+  urlImages.appendChild(inputUrl)
+}
+function deleteImageUrl() {
+  inputUrl = document.getElementById(`${count}`)
+  if (count > 1) {
+    urlImages.removeChild(urlImages.childNodes[count+1])
+    arrayUrlImages.splice(longUrlImages-1,1)
+    count -=1;
+  }else{
+    alert('No se pueden eliminar más elementos')
+  }
+}
+function keyDown(event) {
+  arrayUrlImages[event.target.id] = event.target.value
 }

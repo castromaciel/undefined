@@ -78,6 +78,40 @@ axios.get('http://localhost:3000/games')
 .then(apiGames => {
   filterFunction(apiGames)
 })
+
+let usuario =  JSON.parse(localStorage.getItem('usuarioLogeado'))
+let user = document.getElementById('users')
+let loginAdmin = document.getElementById('loginAdmin')
+let registerAdmin = document.getElementById('registerAdmin')
+
+if (usuario === null) {
+  console.log('no hay usuario logueado')
+}else if(usuario.nombre === 'Admin'){
+  let adminNav = document.createElement('li')
+  adminNav.classList = 'nav-item me-4'
+  adminNav.innerHTML = `
+    <a class="fs-4 nav-link active" aria-current="page" href="/html/admin.html">Admin</a>
+    `;
+  let closeAccount = document.createElement('li')
+  closeAccount.classList = 'nav-item me-4'
+  closeAccount.innerHTML = `
+    <button class="fs-4 nav-link active nav-btn" type="button" aria-current="page" onclick="closeAccount()">Cerrar sesión</button>
+    `;
+  user.appendChild(adminNav)
+  user.appendChild(closeAccount)
+  user.removeChild(loginAdmin)
+  user.removeChild(registerAdmin)
+}else{
+  let closeAccount = document.createElement('li')
+  closeAccount.classList = 'nav-item me-4'
+  closeAccount.innerHTML = `
+    <button type="button" class="fs-4 nav-link active nav-btn" aria-current="page" on>Cerrar sesión</button>
+    `;
+  user.appendChild(closeAccount)
+  user.removeChild(registerAdmin)
+  user.removeChild(loginAdmin)  
+}
+
 let filter;
 function filterFunction(apiGames) {
   games.push(...apiGames.data);
@@ -107,31 +141,8 @@ function chargingGames(gamesList) {
     }
   });
 }
-function chargingGames(gamesList) {
-  allGames.push(...gamesList);
-  let firstGame = true;
-  let createCarousel = document.getElementById('createCarousel')
-  allGames.forEach(game => 
-  {
-    if(game.outstanding === true)
-    {
-      let carouselItem = document.createElement('div')
-      if (firstGame === true) {
-        carouselItem.className = 'd-flex row carousel-item active'
-        firstGame = false;
-      } else {
-        carouselItem.className = 'd-flex row carousel-item'
-      }
-      carouselItem.innerHTML = 
-        `<img src="${game.images}" class="px-lg-3 col-sm-12 col-md-12 col-lg-12 col-xl-7" alt="" id="gameCard0">
-        <div class="my-3 my-xl-0 px-sm-3 px-lg-3 col-sm-12 col-md-12 box col-lg-12 col-xl-5 d-flex flex-column justify-content-between">
-          <h3 class="fs-md-3 text-truncate" id="gameTitle0">${game.name}</h3>
-          <p class="m-0 px-3 fs-4 reviewText" id="gameDescription0">${game.description}</p>
-          <a href="#" target="_blank" type="button" class="me-5 fs-4 btn btn-outline-light align-self-end">Ver más</a>
-        </div>`;
-      createCarousel.appendChild(carouselItem)
-    }
-  });
+function closeAccount(){
+  console.log('llego')
+  localStorage.removeItem("usuarioLogeado");
+  window.location.replace('/index.html');
 }
-console.log(allGames)
-console.log(games)

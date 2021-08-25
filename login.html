@@ -9,24 +9,25 @@
 </head>
 <body class="bodyLogin">
   <main class="mainLogin">
-    <div class="contenedor__todo">     
-      <div class="caja__trasera">
-        <div class="caja__trasera-register">
+    <div class="contenedorTodo">     
+      <div class="cajaTrasera">
+        <div class="cajaTrasera-register">
           <h3>¿Aun no tienes una cuenta?</h3>
           <p>Registrate para poder iniciar sesión</p>
-          <button id="btn__registrarse">Registrarse</button>
+          <button id="btnRegistrarse">Registrarse</button>
         </div>
       </div>  
     <!--Formulario Login-->
-      <div class="contenedor__login">
-        <form class="formulario__login">
+      <div class="contenedorLogin">
+        <form onsubmit="iniciarSesion(event)" class="formularioLogin">
           <h2>Iniciar Sesión</h2>
-          <input type="text" placeholder="Correo Electronico">
-          <input type="password" placeholder="Contraseña">
-          <button>Iniciar Sesión</button>
+          <input type="text" placeholder="Nombre de usuario" id="nombre">
+          <input type="password" placeholder="Contraseña" id="contraseña">
+          <button type="submit">Iniciar Sesión</button>
         </form>
       </div>   
     </div>
   </main>
+  <script src="./js/login.js"></script>
 </body>
 </html>

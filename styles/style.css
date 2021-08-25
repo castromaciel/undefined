@@ -42,13 +42,13 @@ body{
   background-position: center;
   background-attachment: fixed;
 }
-.contenedor__todo{
+.contenedorTodo{
   width: 100%;
   max-width: 800px;
   margin: auto;
   position: relative;
 }
-.caja__trasera{
+.cajaTrasera{
   width: 100%;
   padding: 10px 20px;
   display: flex;
@@ -56,20 +56,20 @@ body{
   backdrop-filter: blur(10px);
   background-color: rgba(0, 128, 255, 0.3);
 }
-.caja__trasera-register{
+.cajaTrasera-register{
   margin: 100px 40px;
   color: white;
   transition: all 500ms;
 }
-.caja__trasera-register p,
-.caja__trasera-register button{
+.cajaTrasera-register p,
+.cajaTrasera-register button{
   margin-top: 30px;
 }
-.caja__trasera-register h3{
+.cajaTrasera-register h3{
   font-weight: 400;
   font-size: 26px;
 }
-.caja__trasera-register button{
+.cajaTrasera-register button{
   padding: 10px 40px;
   border: 2px solid white;
   background-color: transparent;
@@ -79,11 +79,11 @@ body{
   color: white;
   transition: all 300ms;
 }
-.caja__trasera-register button:hover{
+.cajaTrasera-register button:hover{
   background:white;
   color: rgba(0, 128, 255, 0.3);
 }
-.contenedor__login{
+.contenedorLogin{
   display: flex;
   align-items: center;
   width: 100%;
@@ -92,20 +92,20 @@ body{
   top: -185px;
   left: 10px;
 }
-.contenedor__login form{
+.contenedorLogin form{
   width: 100%;
   padding: 80px 20px;
   background: white;
   position: absolute;
   border-radius: 20px;
 }
-.contenedor__login form h2{
+.contenedorLogin form h2{
   font-size: 30px;
   text-align: center;
   margin-bottom: 20px;
   color: #46A2FD;
 }
-.contenedor__login form input{
+.contenedorLogin form input{
   width: 100%;
   margin-top: 20px;
   padding: 10px;
@@ -114,7 +114,7 @@ body{
   outline: none;
   font-size: 16px;
 }
-.contenedor__login form button{
+.contenedorLogin form button{
   padding: 10px 40px;
   margin-top: 30px;
   border: none;
@@ -125,7 +125,7 @@ body{
   transition: all 300ms;
   border: solid #46A2FD;
 }
-.contenedor__login form button:hover{
+.contenedorLogin form button:hover{
   background:#46A2FD;
   color: white;
 }

@@ -1,0 +1,109 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.mainLogin{
+  font-family: sans-serif;
+  width: 100%;
+  padding: 20px;
+  margin: auto;
+  margin-top: 100px;
+}
+.bodyLogin{
+  background-image: url(/images/fondoLoign.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+.contenedorTodo{
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  position: relative;
+}
+.cajaTrasera{
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: flex-end;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 128, 255, 0.3);
+}
+.cajaTrasera-register{
+  margin: 100px 40px;
+  color: white;
+  transition: all 500ms;
+}
+.cajaTrasera-register p,
+.cajaTrasera-register button{
+  margin-top: 30px;
+}
+.cajaTrasera-register h3{
+  font-weight: 400;
+  font-size: 26px;
+}
+.cajaTrasera-register button{
+  padding: 10px 40px;
+  border: 2px solid white;
+  background-color: transparent;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  transition: all 300ms;
+}
+.cajaTrasera-register button:hover{
+  background:white;
+  color: rgba(0, 128, 255, 0.3);
+}
+.contenedorLogin{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 380px;
+  position: relative;
+  top: -185px;
+  left: 10px;
+}
+.contenedorLogin form{
+  width: 100%;
+  padding: 80px 20px;
+  background: white;
+  position: absolute;
+  border-radius: 20px;
+}
+.contenedorLogin form h2{
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #46A2FD;
+}
+.contenedorLogin form input{
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  background: #F2F2F2F2;
+  outline: none;
+  font-size: 16px;
+}
+.contenedorLogin form button{
+  padding: 10px 40px;
+  margin-top: 30px;
+  border: none;
+  font-size: 14px;
+  background: white;
+  color: #46A2FD;
+  cursor: pointer;
+  transition: all 300ms;
+  border: solid #46A2FD;
+}
+.contenedorLogin form button:hover{
+  background:#46A2FD;
+  color: white;
+}
+@media (min-width: 992px){
+
+}

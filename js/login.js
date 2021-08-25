@@ -16,7 +16,6 @@ const iniciarSesion = (e) => {
         if(usuario.nombre === 'Admin'){
           // Si el usuario logueado es el administrador, redirigir a la pagina de administracion
           window.location.replace('admin.html')
-          let nav = document.getElementById('nav')
         }else{
           // Si es un usuario comun, redirigir al home
           window.location.replace('index.html')

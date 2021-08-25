@@ -157,13 +157,13 @@ body{
   justify-content: space-evenly;
   padding: 5rem;
 }
-.card-title{
+.sectionNews .card-title{
   display: flex;
   justify-content: center;  
   padding: 1rem;
   margin-top: 1rem;
 }
-.card-body{
+.sectionNews .horizontalNews .card-body{
   background: linear-gradient(to bottom left, var(--first),var(--second));
   border-bottom-right-radius: 20px;
   border-top-left-radius: 20px;

@@ -151,7 +151,34 @@ body{
   text-decoration: none;
   background-color: var(--first);
 }
-
+/*Inicio Estilos Noticias*/
+.sectionNews{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5rem;
+}
+.sectionNews .card-title{
+  display: flex;
+  justify-content: center;  
+  padding: 1rem;
+  margin-top: 1rem;
+}
+.sectionNews .horizontalNews .card-body{
+  background: linear-gradient(to bottom left, var(--first),var(--second));
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+.horizontalNews{
+  display: inherit;
+  padding: 2rem;
+}
+details summary::after {
+  content: "Leer mas..."
+}
+details[open] summary::after {
+  content: "Leer menos..."
+}
+/*Fin Estilos Noticias*/
 footer .container-fluid{ /*Padre: Footer and container-fluid: Hijo!*/
   padding: 0;
 }

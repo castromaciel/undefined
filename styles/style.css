@@ -4,7 +4,7 @@
   --gray: #575757;
   --gray2: #212529;
 }
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -20,7 +20,7 @@ body{
   transform: scale(1.09);
 }
 .hero{
-  background: linear-gradient(to bottom right, var(--second),rgb(0, 0, 1));
+  background: linear-gradient(to bottom right,rgb(0, 0, 1), var(--second));
   padding: 5% 0;
   box-shadow: 
     4px 8px 10px 0 rgba(0, 0, 0, 0.5),
@@ -44,7 +44,7 @@ body{
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color:var(--gray);
+  background-color: var(--gray);
   background-clip: border-box;
   border: 2px solid var(--first);
   border-radius: 0.25rem;
@@ -127,16 +127,17 @@ table{
   border-top-left-radius: 20px;
 }
 details summary::after {
-  content: "Leer mas..."
+  content: "Leer mas...";
 }
 details[open] summary::after {
-  content: "Leer menos..."
+  content: "Leer menos...";
 }
 /*Fin Estilos Noticias*/
-footer .container-fluid{ /*Padre: Footer and container-fluid: Hijo!*/
+footer .container-fluid {
+  /*Padre: Footer and container-fluid: Hijo!*/
   padding: 0;
 }
-footer a{
+footer a {
   text-decoration: none;
   color: black;
 }

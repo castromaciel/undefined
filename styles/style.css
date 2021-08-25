@@ -8,6 +8,42 @@
   margin: 0;
   box-sizing: border-box;
 }
+body{
+  background: linear-gradient(to bottom left, var(--first),var(--second));
+}
+.fondNavbar{
+  /* background-color: var(--first); */
+  background: linear-gradient(90deg ,rgb(0, 0, 1),var(--second), var(--first));
+  border-bottom: 2px;
+
+}
+.pageLink{
+  transition: 200ms;
+  border: 0;
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: black;
+}
+.pageLink:hover{
+  color: white;
+  text-decoration: none;
+}
+.hero{
+  background: linear-gradient(to bottom right, var(--second),rgb(0, 0, 1));
+  padding: 5% 0;
+  box-shadow: 
+    4px 8px 10px 0 rgba(0, 0, 0, 0.5),
+    0 6px 20px 0 rgba(0, 0, 0, 0.5);
+  color: rgb(255,255,255);
+}
+.row{
+  --bs-gutter-x: 0;
+}
+.carousel-control-next, .carousel-control-prev{
+  width: 5%;
+  opacity: 0;
+}
 .titleFilter {
   text-shadow: 1px 1px 10px var(--first);
   color: black;
@@ -38,163 +74,47 @@
 }
 .boxShadowFull {
   box-shadow: 1px 0px 26px 4px rgba(0,0,0,0.68);
--webkit-box-shadow: 1px 0px 26px 4px rgba(0,0,0,0.68);
--moz-box-shadow: 1px 0px 26px 4px rgba(0,0,0,0.68);
+  -webkit-box-shadow: 1px 0px 26px 4px rgba(0,0,0,0.68);
+  -moz-box-shadow: 1px 0px 26px 4px rgba(0,0,0,0.68);
 }
 .cardShadowFull {
   box-shadow: 1px 0px 7px 4px rgba(245,175,25,0.68);
--webkit-box-shadow: 1px 0px 7px 4px rgba(245,175,25,0.68);
--moz-box-shadow: 1px 0px 7px 4px rgba(245,175,25,0.68);
-}
-body{
-  background: linear-gradient(to bottom left, var(--first),var(--second));
-
-}
-.hero{
-  background: linear-gradient(to bottom right, var(--second),rgb(0, 0, 1));
-  padding: 5% 0;
-  box-shadow: 
-    4px 8px 10px 0 rgba(0, 0, 0, 0.5),
-    0 6px 20px 0 rgba(0, 0, 0, 0.5);
-  color: rgb(255,255,255);
-}
-.row{
-  --bs-gutter-x: 0;
-}
-.carousel-control-next, .carousel-control-prev{
-  width: 5%;
-  opacity: 0;
+  -webkit-box-shadow: 1px 0px 7px 4px rgba(245,175,25,0.68);
+  -moz-box-shadow: 1px 0px 7px 4px rgba(245,175,25,0.68);
 }
 
-/* css login */
-.mainLogin{
-  font-family: sans-serif;
-  width: 100%;
-  padding: 20px;
-  margin: auto;
-  margin-top: 100px;
+.reviewText{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  line-clamp: 6;
+  overflow: hidden;
 }
-.bodyLogin{
-  background-image: url(../Imagenes/fondoLoign.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
+.reviewTextTable{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  overflow: hidden;
 }
-.contenedorTodo{
-  width: 100%;
-  max-width: 800px;
-  margin: auto;
-  position: relative;
+.modal-content{
+  background: #212529;
+  color:#FFFFFF;
 }
-.cajaTrasera{
-  width: 100%;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: flex-end;
-  backdrop-filter: blur(10px);
-  background-color: rgba(0, 128, 255, 0.3);
-}
-.cajaTrasera-register{
-  margin: 100px 40px;
-  color: white;
-  transition: all 500ms;
-}
-.cajaTrasera-register p,
-.cajaTrasera-register button{
-  margin-top: 30px;
-}
-.cajaTrasera-register h3{
-  font-weight: 400;
-  font-size: 26px;
-}
-.cajaTrasera-register button{
-  padding: 10px 40px;
-  border: 2px solid white;
-  background-color: transparent;
-  font-size: 14px;
-  font-weight: 600;
+.bi{
   cursor: pointer;
-  color: white;
-  transition: all 300ms;
 }
-.cajaTrasera-register button:hover{
-  background:white;
-  color: rgba(0, 128, 255, 0.3);
+.star.fav{
+  color: gold;
 }
-.contenedorLogin{
-  display: flex;
-  align-items: center;
-  width: 100%;
-  max-width: 380px;
-  position: relative;
-  top: -185px;
-  left: 10px;
-}
-.contenedorLogin form{
-  width: 100%;
-  padding: 80px 20px;
-  background: white;
-  position: absolute;
-  border-radius: 20px;
-}
-.contenedorLogin form h2{
-  font-size: 30px;
-  text-align: center;
-  margin-bottom: 20px;
-  color: #46A2FD;
-}
-.contenedorLogin form input{
-  width: 100%;
-  margin-top: 20px;
-  padding: 10px;
-  border: none;
-  background: #F2F2F2F2;
-  outline: none;
-  font-size: 16px;
-}
-.contenedorLogin form button{
-  padding: 10px 40px;
-  margin-top: 30px;
-  border: none;
-  font-size: 14px;
-  background: white;
-  color: #46A2FD;
-  cursor: pointer;
-  transition: all 300ms;
-  border: solid #46A2FD;
-}
-.contenedorLogin form button:hover{
-  background:#46A2FD;
-  color: white;
-}
-
-  
-
-
-
-.fondNavbar{
-  background-color: var(--first);
-}
-.pageLink{
-  transition: 200ms;
-  background-color: var(--first);
-  border: 0;
-  display: block;
-  padding: 0.5rem 1rem;
-  text-decoration: none;
-  color: black;
-}
-.pageLink:hover{
-  color: white;
-  text-decoration: none;
-  background-color: var(--first);
+table{
+  border-collapse: inherit;
 }
 /*Inicio Estilos Noticias*/
 .sectionNews{
   display: flex;
   justify-content: space-evenly;
-  padding: 5rem;
+  /* padding: 5rem; */
 }
 .sectionNews .card-title{
   display: flex;
@@ -202,14 +122,22 @@ body{
   padding: 1rem;
   margin-top: 1rem;
 }
-.sectionNews .horizontalNews .card-body{
-  background: linear-gradient(to bottom left, var(--first),var(--second));
+.sectionNews .card-body{
+  /* background: linear-gradient(to bottom left, var(--first),var(--second)); */
+  background: linear-gradient(to bottom right, var(--second),rgb(0, 0, 1));
   border-bottom-right-radius: 20px;
   border-top-left-radius: 20px;
 }
 .horizontalNews{
   display: inherit;
   padding: 2rem;
+}
+.horizontalNews .card-body{
+  /* background: linear-gradient(to bottom left, var(--first),var(--second)); */
+  background: linear-gradient(to bottom right, var(--second),rgb(0, 0, 1));
+
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 20px;
 }
 details summary::after {
   content: "Leer mas..."
@@ -224,9 +152,6 @@ footer .container-fluid{ /*Padre: Footer and container-fluid: Hijo!*/
 footer a{
   text-decoration: none;
   color: black;
-}
-.footerMargin{
-  margin-top: 5rem;
 }
 .fondSocial{
   background-color: var(--first);

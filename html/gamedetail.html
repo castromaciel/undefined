@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undefined Games</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="stylesheet" href="/styles/gamedetail.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+<body>
+  <header class="">
+    <nav class="navbar navbar-expand-lg navbar-dark fondNavbar shadow sticky-top" id="nav">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <!-- <i class="fs-3 ms-3 text-white bi bi-search">UndefinedGames</i> -->
+          <img src="/images/logo.png" alt="" width="80" height="50"
+          class="ms-lg-5">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="justify-content-end collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav align-items-end">
+            <li class="nav-item me-4">
+              <a class="fs-4 nav-link active" aria-current="page" href="./index.html">Inicio</a>
+            </li>
+            <li class="nav-item me-4">
+              <a class="fs-4 nav-link active" href="/html/login.html">Login</a>
+            </li>
+            <li class="nav-item me-4">
+              <a class="fs-4 nav-link active" href="/html/register.html">Registro</a>
+            </li>
+            <li class="nav-item me-4">
+              <a class="fs-4 nav-link active" href="#noticias">Noticias</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="container my-5 blur" ><h1 id="titleGame">Nombre del Juego</h1></div>
+  <section class="container bgDetail boxShadowFull">
+    <div class="row ">
+    <div class="col-sm-12 col-md-12 col-lg-8 g-0">
+      <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="" id="img1" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/546560/ss_e5152f19710aaa91c4a4ab161785af3e1f8d850d.600x338.jpg?t=1626370761" id="img2" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+      <div class="d-flex flex-sm-col justify-content-between flex-md-column mt-sm-3 mt-md-3 mt-lg-0 col-sm-12 col-md-12 col-lg-4 g-0">
+        <img class="img-fluid" id="img0" src="" alt="">
+        <h3 class="description text-center">Descripción</h3>
+        <p class="description" id="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim sint magnam deleniti dicta iusto eaque? Aliquid a quae eum laborum non reprehenderit! Doloremque harum alias id debitis similique aspernatur iusto.
+        Blanditiis maxime saepe ab iusto hic tenetur sapiente maiores autem sint voluptates provident error quis voluptate enim nisi dolore facilis, debitis perferendis architecto .</p>
+        <div id="containerButton">
+          
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Requeriments -->
+  <section class="container my-5 boxShadowFull">
+    <div class="row">
+      <div class="d-flex flex-column  align-items-center col-sm-12 col-md-12 col-lg6 containerRequirements">
+        <div><i class="bi bi-cpu"></i> <h5>sa</h5></div>
+        <div><i class="bi bi-cpu"></i> <h5>sa</h5></div>
+        
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg6 containerRequirements">
+      
+      </div>
+    </div>
+  </section>
+  <script src="/js/gamedetail.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</body>
+</html>

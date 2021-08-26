@@ -10,23 +10,41 @@
 header{
   background-color: white;
   text-align: center;
+  outline: thick double #00d460;
 }
-.fondMain{
-  background-image: url(../images/imageacercade/paisajedinosauriogoogle.jpg);
+body{
+  background-image: url(/images/fondo2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.imgSize{
+  width: 353px;
+  height: 350px;
+}
+ul li a{
+  text-decoration: none;
+  color: black;
+}
+ul li a:hover{
+  transition: 200ms;
+  transform: scale(1.09);
+  color: #00d460;
+}
+ul{
+  list-style: none;
 }
 .cardSize{
   width: 18rem;
 }
-footer .container-fluid{ /*Padre: Footer and container-fluid: Hijo!*/
+footer .container-fluid{ 
   padding: 0;
 }
 footer a{
   text-decoration: none;
   color: black;
 }
-.footerMargin{
-  margin-top: 5rem;
-}
-.fondSocial{
-  background-color: var(--first);
+footer .container-fluid{
+  padding: 0;
+  margin: 0;
 }

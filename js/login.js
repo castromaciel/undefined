@@ -4,7 +4,7 @@ const admin = {
   email:'none'
 }
 
-const usuarios = JSON.parse(localStorage.getItem('usuariosKey')) || [admin]
+const usuarios = JSON.parse(localStorage.getItem('newUser')) || [admin]
 
 const iniciarSesion = (e) => {
   e.preventDefault()

@@ -22,7 +22,6 @@ let usuario =  JSON.parse(localStorage.getItem('usuarioLogueado'))
 let user = document.getElementById('users')
 let loginAdmin = document.getElementById('loginAdmin')
 let registerAdmin = document.getElementById('registerAdmin')
-console.log(usuario)
 
 
 if (usuario === null) {

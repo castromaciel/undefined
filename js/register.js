@@ -45,7 +45,7 @@ const crearUsuario = (e) => {
       console.error("El administrador ya existe");
     }
   } else {
-    console.error("Faltan datos");
+    alert('Complete todos los campos');
   }
 };
 

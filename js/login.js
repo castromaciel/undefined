@@ -27,10 +27,13 @@ const iniciarSesion = (e) => {
           // Si es un usuario comun, redirigir al home
           window.location.replace('/')
         }
+        
       }else{
         console.log("Usuario incorrecto");
       }
     }
+  }else{
+    alert('Complete todos los campos')
   }
 
 }

@@ -4,20 +4,47 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/styles/acercade.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/styles/style.css">
+  <link rel="stylesheet" href="/styles/acercade.css">
   <!-- Favicon -->
   <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
   <title>Acerca de Nosotros</title>
 </head>
 <body>
   <header>
-    <h1>UNDEFINED GAMES</h1>
+    <nav class="navbar navbar-expand-lg navbar-dark fondNavbar fixed-top" id="nav">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/index.html">
+          <!-- <i class="fs-3 ms-3 text-white bi bi-search">UndefinedGames</i> -->
+          <img src="/images/logo.png" class="logoNav" alt="" width="80" height="50"
+          class="ms-lg-5">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="justify-content-end collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav align-items-end" id="users">
+            <li class="nav-item me-4">
+              <a class="fs-4 nav-link active" aria-current="page" href="/index.html">Inicio</a>
+            </li>
+            <li class="nav-item me-4" id="loginAdmin">
+              <a class="fs-4 nav-link active" href="/html/login.html">Login</a>
+            </li>
+            <li class="nav-item me-4" id="registerAdmin">
+              <a class="fs-4 nav-link active" href="/html/register.html">Registro</a>
+            </li>
+            <li class="nav-item me-4">
+              <a class="fs-4 nav-link active" href="#noticias">Noticias</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </header>
   <main>
     <!--div padre-->
-    <div class="container-fluid"> 
+    <div class="my-5 py-5 container-fluid"> 
       <!--Story-->
       <div class="d-flex justify-content-center">
         <div class="card text-center mt-5 mb-5">

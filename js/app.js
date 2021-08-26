@@ -1,7 +1,7 @@
 let games = [];
 let allGames = [];
+let url = 'http://localhost:3000/games';
 let filter;
-let url = "http://localhost:3000/games";
 const admin = [{
   nombre: "Admin",
   contraseña: "admin",
@@ -12,50 +12,44 @@ const admin = [{
 const usuarios = JSON.parse(localStorage.getItem('usuariosKey')) || [admin]
 
 fetch(url)
-  .then((response) => response.json())
-  .then((games) => {
-    chargingGames(games);
-  });
-axios.get('http://localhost:3000/games')
+.then(response => response.json())
+.then(games => 
+  {
+    chargingGames(games)
+  })
+  axios.get('http://localhost:3000/games')
   .then(apiGames => {
     filterFunction(apiGames)
   })
-class Categories {
-  constructor(games) {
+class Categories{
+  constructor(games){
     this.games = games;
   }
-  saveLocalStorage(saveArr) {
-    localStorage.setItem("arrLocal", JSON.stringify(saveArr));
+  saveLocalStorage (saveArr) {
+  localStorage.setItem("arrLocal" ,JSON.stringify(saveArr))
   }
-  saveById() {
-    let newPage = JSON.parse(localStorage.getItem("arrLocal"));
-    newPage.forEach((element) => {
-      if (element.id == event.target.parentNode.parentNode.id) {
-        console.log(element.id);
-        localStorage.setItem("detailCard", JSON.stringify(element));
-      }
-    });
-  }
-  filtered(cat, games) {
+  saveById () {
+    let newPage =JSON.parse(localStorage.getItem("arrLocal"))
+      newPage.forEach(element => {
+        if (element.id == event.target.parentNode.parentNode.id) {
+          console.log(element.id)
+          localStorage.setItem("detailCard", JSON.stringify(element))
+        }
+      });
+    }
+    filtered(cat, games) {
     this.clearCard();
     let index = 0;
     let gamesFil = [];
-    games.forEach((game) => {
-      game.categories.forEach((category) => {
-        if (category == cat) {
-          gamesFil.push(game);
-          this.cardCreate(
-            gamesFil[index].images[0],
-            gamesFil[index].name,
-            gamesFil[index].description,
-            "./html/gamedetail.html",
-            gamesFil[index].price,
-            game.id
-          );
+    gamess.forEach((game) => {
+      game.categories.forEach ((category) => {
+        if (category == cat){
+          gamesFil.push(game)
+          this.cardCreate(gamesFil[index].images[0], gamesFil[index].name, gamesFil[index].description, "./html/gamedetail.html", gamesFil[index].price, game.id )
           index++;
         }
-      });
-    });
+      })
+    })
     this.saveLocalStorage(gamesFil);
   }
   standOut() {
@@ -63,31 +57,17 @@ class Categories {
     let arrStandOut = [];
     games.forEach((standOut) => {
       if (standOut.outstanding) {
-        arrStandOut.push(standOut);
-        this.cardCreate(
-          standOut.images[0],
-          standOut.name,
-          standOut.description,
-          "./html/gamedetail.html",
-          standOut.price,
-          standOut.id
-        );
+        arrStandOut.push(standOut)
+        this.cardCreate(standOut.images[0], standOut.name, standOut.description, "./html/gamedetail.html", standOut.price, standOut.id)
       }
-    });
-    this.saveLocalStorage(arrStandOut);
-  }
-  allGames() {
-    this.clearCard();
-    this.saveLocalStorage(games);
-    games.forEach((game) => {
-      this.cardCreate(
-        game.images[0],
-        game.name,
-        game.description,
-        "./html/gamedetail.html",
-        game.price,
-        game.id
-      );
+    })
+    this.saveLocalStorage (arrStandOut);
+  } 
+  allGames () {
+    this.clearCard()
+    this.saveLocalStorage (games)
+    games.forEach(game => {
+      this.cardCreate(game.images[0], game.name, game.description, "./html/gamedetail.html", game.price, game.id)
     });
   }
   cardCreate(imgS, cardTitle, subTitle, linkButton, price, id) {
@@ -102,7 +82,7 @@ class Categories {
     image.className = "card-img-top";
     card.appendChild(image);
     let cardBody = document.createElement("div");
-    cardBody.className = "card-body";
+    cardBody.className = "card-body d-flex flex-column justify-content-around text-center";
     card.appendChild(cardBody);
     let title = document.createElement("h5");
     title.className = "card-title";
@@ -113,11 +93,9 @@ class Categories {
     subtitle.innerText = subTitle;
     cardBody.appendChild(subtitle);
     let boton = document.createElement("a");
-    boton.className = "btn btn-warning";
-    boton.innerText = `Comprar $:${price}`;
-    boton.addEventListener("click", (event) => {
-      this.saveById();
-    });
+    boton.className = "btn btn-warning align-self-center d-inline";
+    boton.innerText = `Ver más`;
+    boton.addEventListener("click", (event) => {this.saveById()})
     boton.setAttribute("href", linkButton);
     cardBody.appendChild(boton);
   }
@@ -132,6 +110,10 @@ class Categories {
 // usuarioRegistered.push(admin)
 // usuarioRegistered.push(localStorage.getItem('usuariosKey'))
 
+
+// localStorage.removeItem('usuariosKey')
+let usuarioRegistered =[];
+usuarioRegistered.push(admin)
 
 let usuario =  JSON.parse(localStorage.getItem('usuarioLogueado'))
 let user = document.getElementById('users')
@@ -194,7 +176,7 @@ function chargingGames(gamesList) {
     }
   });
 }
-function closeAccount() {
+function closeAccount(){
   localStorage.removeItem("usuarioLogueado");
-  window.location.replace("/index.html");
+  window.location.replace('/index.html');
 }

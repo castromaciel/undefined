@@ -141,7 +141,7 @@ main {
   }
   .contenedorLoginRegister{
     left: 0px;
-    top: 0;
+    top: 100px;
     align-items: unset;
   }
   main{

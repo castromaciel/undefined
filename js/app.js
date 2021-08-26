@@ -2,11 +2,14 @@ let games = [];
 let allGames = [];
 let filter;
 let url = "http://localhost:3000/games";
-const admin = {
-  nombre: 'Admin',
-  contraseña :'admin',
-  email:'none'
-}
+const admin = [{
+  nombre: "Admin",
+  contraseña: "admin",
+  email: "none"
+  }
+];
+
+const usuarios = JSON.parse(localStorage.getItem('usuariosKey')) || [admin]
 
 fetch(url)
   .then((response) => response.json())
@@ -125,31 +128,15 @@ class Categories {
     }
   }
 }
-// localStorage.removeItem('usuariosKey')
-let usuarioRegistered =[];
-usuarioRegistered.push(admin)
+// let usuarioRegistered =[];
+// usuarioRegistered.push(admin)
 // usuarioRegistered.push(localStorage.getItem('usuariosKey'))
 
-if (usuarioRegistered.length === 1) {
-  console.log(usuarioRegistered[0])
-  localStorage.setItem('usuariosKey',JSON.stringify(usuarioRegistered[0]))
-  console.log('Solo hay admin')
-}else{
-  for (const key in usuarioRegistered) {
-    console.log(usuarioRegistered[key])
-    // if (Object.hasOwnProperty.call(object, key)) {
-    //   const element = object[key];
-      
-    // }
-  }
-}
 
 let usuario =  JSON.parse(localStorage.getItem('usuarioLogueado'))
 let user = document.getElementById('users')
-let loginAdmin = document.getElementById('loginAdmin')
-let registerAdmin = document.getElementById('registerAdmin')
-
-// console.log(usuario)
+// let loginAdmin = document.getElementById('loginAdmin')
+// let registerAdmin = document.getElementById('registerAdmin')
 
 if (usuario === null) {
   // console.log('no hay usuario logueado')
@@ -201,7 +188,7 @@ function chargingGames(gamesList) {
         <div class="my-3 my-xl-0 px-sm-3 px-lg-3 col-sm-12 col-md-12 box col-lg-12 col-xl-5 d-flex flex-column justify-content-between">
           <h3 class="fs-md-3 text-truncate" id="gameTitle0">${game.name}</h3>
           <p class="m-0 px-3 fs-4 reviewText" id="gameDescription0">${game.description}</p>
-          <a href="#" target="_blank" type="button" class="me-5 fs-4 btn btn-outline-light align-self-end">Ver más</a>
+          <a href="/html/404.html" target="_blank" type="button" class="me-5 fs-4 btn btn-outline-light align-self-end">Ver más</a>
         </div>`;
       createCarousel.appendChild(carouselItem);
     }

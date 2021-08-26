@@ -16,21 +16,6 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
-.hero{
-  background: linear-gradient(to bottom right, var(--second),rgb(0, 0, 1));
-  padding: 5% 0;
-  box-shadow: 
-    4px 8px 10px 0 rgba(0, 0, 0, 0.5),
-    0 6px 20px 0 rgba(0, 0, 0, 0.5);
-  color: rgb(255,255,255);
-}
-.row{
-  --bs-gutter-x: 0;
-}
-.carousel-control-next, .carousel-control-prev{
-  width: 5%;
-  opacity: 0;
-}
 .fondNavbar{
   background-color: var(--gray2);
   border-bottom: 2px solid var(--green);
@@ -172,6 +157,13 @@ table {
   background: var(--gray2);
   /* border-bottom-right-radius: 20px; */
   /* border-top-left-radius: 20px; */
+}
+.text-clamped{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+  line-clamp: 7;
+  overflow: hidden;
 }
 details summary::after {
   content: "Leer mas...";

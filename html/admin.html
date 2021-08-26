@@ -8,6 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="/styles/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
     <title>Undefined Games</title>
   </head>
   <body>
@@ -213,29 +215,40 @@
     <footer>
       <div class="container-fluid footerMargin">
         <div class="row">
-          <div class=" col-12 col-sm-6 fondSocial justify-content-center align-items-center">
+          <div class=" col-12 col-sm-6 fondSocial justif y-content-center align-items-center">
             <div class="d-flex justify-content-evenly"> <!--No funcionaba el justify xq no tenia d-flex-->
-              <a href=""> <!--Enviar a pag 404-->
-                <i class="bi bi-instagram"></i>
+              <a href="/html/404.html" target="_blank"> <!--Enviar a pag 404-->
+                <i class="bi bi-instagram fs-4"></i>
               </a>
-              <i class="bi bi-twitch"></i>
-              <i class="bi bi-facebook"></i>
-              <i class="bi bi-whatsapp"></i>
-              <i class="bi bi-youtube"></i>
+              <a href="/html/404.html" target="_blank">
+                <i class="bi bi-twitch fs-4"></i>
+              </a>
+              <a href="/html/404.html" target="_blank">
+                <i class="bi bi-facebook fs-4"></i>
+              </a>
+              <a href="/html/404.html" target="_blank">
+                <i class="bi bi-whatsapp fs-4"></i>
+              </a>
+              <a href="/html/404.html" target="_blank">
+                <i class="bi bi-youtube fs-4"></i>
+              </a>
             </div>
           </div>
-          <div class="col-12 col-sm-6 bg-white d-flex justify-content-center align-items-center">
-            <span><a href="/html/acercade.html">Acerca de Nosotros </a></span> |
-            <span><a href=""> Contacto</a></span>
+          <div class="fs-4 col-12 col-sm-6 bg-secondary d-flex justify-content-center align-items-center">
+            <span><a href="/html/acercade.html" target="_blank">Acerca de Nosotros </a></span> |
+            <span><a href="/html/404.html" target="_blank"> Contacto</a></span>
           </div>
         </div>
         <div class="row">
-          <div class="col-12 bg-secondary d-flex justify-content-center align-items-center">
+          <div class="p-3 col-12 bg-dark d-flex flex-column justify-content-center align-items-center">
+            <a href="">
+              <img src="/images/logo.png" class="logoNav" width="80" height="50" alt="">
+            </a>
             <p class="text-white mb-0">Undefined © 2021 Todos los derechos reservados</p>
           </div>
         </div>    
       </div>
-    </footer>
+    </footer> 
     <!-- Scripts -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="/js/admin.js"></script>

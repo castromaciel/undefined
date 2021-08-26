@@ -6,8 +6,7 @@ const admin = [{
   nombre: "Admin",
   contraseña: "admin",
   email: "none"
-  }
-];
+}];
 
 const usuarios = JSON.parse(localStorage.getItem('usuariosKey')) || [admin]
 
@@ -17,10 +16,10 @@ fetch(url)
   {
     chargingGames(games)
   })
-  axios.get('http://localhost:3000/games')
+axios.get('http://localhost:3000/games')
   .then(apiGames => {
     filterFunction(apiGames)
-  })
+})
 class Categories{
   constructor(games){
     this.games = games;

@@ -25,7 +25,7 @@ const iniciarSesion = (e) => {
           window.location.replace('/html/admin.html')
         }else{
           // Si es un usuario comun, redirigir al home
-          window.location.replace('/index.html')
+          window.location.replace('/')
         }
       }else{
         console.log("Usuario incorrecto");

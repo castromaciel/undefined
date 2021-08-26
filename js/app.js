@@ -11,9 +11,6 @@ const admin = [{
 
 const usuarios = JSON.parse(localStorage.getItem('usuariosKey')) || [admin]
 
-
-
-
 fetch(url)
   .then((response) => response.json())
   .then((games) => {

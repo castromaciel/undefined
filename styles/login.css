@@ -64,7 +64,7 @@
   width: 100%;
   max-width: 380px;
   position: relative;
-  top: -185px;
+  top: -195px;
   left: 10px;
 }
 .contenedorLogin form{
@@ -111,19 +111,20 @@
 }
 
 @media (max-width: 992px){
+  .cajaTrasera{
+    display: none;
+  }
+  .contenedorTodo{    
+    display: flex;
+    justify-content: center;
+  }
+  .contenedorLogin{
+    left: 0px;
+    top: 0;
+    align-items: unset;
+
+  }
   .mainLogin{
     margin-top: 75px;
   }
- .cajaTrasera{
-   display: none;
- }
- .contenedorTodo{
-   display: flex;
-   justify-content: center;
- }
- .contenedorLogin{
-   left: 0;
-   top: 0;
-   align-items: unset;
- }
 }

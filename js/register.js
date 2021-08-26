@@ -1,4 +1,5 @@
 // Se crea un objeto con el usuario administrador
+// Se crea un objeto con el usuario administrador
 const admin = {
   nombre: "Admin",
   contraseña: "admin",
@@ -14,8 +15,8 @@ localStorage.setItem("usuariosKey", JSON.stringify(usuarios));
 class Usuario {
   constructor(nombre, email, contraseña) {
     (this.nombre = nombre),
-    (this.email = email),
-    (this.contraseña = contraseña);
+      (this.email = email),
+      (this.contraseña = contraseña);
   }
 }
 

@@ -1,13 +1,13 @@
 let allGames = [];
 let url = 'http://localhost:3000/games';
+let filter;
+let games = [];
 fetch(url)
 .then(response => response.json())
 .then(games => 
   {
     chargingGames(games)
   })
-  let games = [];
-  let filter;
   axios.get('http://localhost:3000/games')
   .then(apiGames => {
     filterFunction(apiGames)
@@ -27,21 +27,21 @@ class Categories{
           localStorage.setItem("detailCard", JSON.stringify(element))
         }
       });
-  }
-  filtered(cat, games) {
+    }
+    filtered(cat, games) {
     this.clearCard();
     let index = 0;
     let gamesFil = [];
     games.forEach((game) => {
       game.categories.forEach ((category) => {
-      if (category == cat){
-      gamesFil.push(game)
-      this.cardCreate(gamesFil[index].images[0], gamesFil[index].name, gamesFil[index].description, "./html/gamedetail.html", gamesFil[index].price, game.id )
-      index++;
-    }
-  })
-  })
-  this.saveLocalStorage(gamesFil);
+        if (category == cat){
+          gamesFil.push(game)
+          this.cardCreate(gamesFil[index].images[0], gamesFil[index].name, gamesFil[index].description, "./html/gamedetail.html", gamesFil[index].price, game.id )
+          index++;
+        }
+      })
+    })
+    this.saveLocalStorage(gamesFil);
   }
   standOut() {
     this.clearCard();
@@ -129,11 +129,6 @@ function closeAccount(){
   localStorage.removeItem("usuarioLogueado");
   window.location.replace('/index.html');
 }
-let games = [];
-axios.get('http://localhost:3000/games')
-.then(apiGames => {
-  filterFunction(apiGames)
-})
 const admin = {
   nombre: 'Admin',
   contraseña :'admin',
@@ -192,5 +187,3 @@ if (usuario === null) {
   user.removeChild(registerAdmin)
   user.removeChild(loginAdmin)  
 }
-
-let filter;

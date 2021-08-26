@@ -12,27 +12,16 @@
 body{
   background: linear-gradient(to bottom left, var(--first),var(--second));
 }
-.hero{
-  background: linear-gradient(to bottom right, var(--second),rgb(0, 0, 1));
-  padding: 5% 0;
-  box-shadow: 
-    4px 8px 10px 0 rgba(0, 0, 0, 0.5),
-    0 6px 20px 0 rgba(0, 0, 0, 0.5);
-  color: rgb(255,255,255);
-}
-.row{
-  --bs-gutter-x: 0;
-}
-.carousel-control-next, .carousel-control-prev{
-  width: 5%;
-  opacity: 0;
-}
 .fondNavbar{
   background-color: var(--gray2);
 }
 .nav-link:hover{
   transition: 100ms;
   transform: scale(1.09);
+}
+.nav-btn{
+  border: none;
+  background: none;
 }
 .hero{
   background: linear-gradient(to bottom right,rgb(0, 0, 1), var(--second));

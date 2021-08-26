@@ -5,7 +5,11 @@ const admin = {
   email: "none",
 };
 // Se piden los datos de los usuarios del local storage, si estos no existen, asignamos el valor de un array con el usuario administrador
-const usuarios = JSON.parse(localStorage.getItem("usuariosKey")) || [admin];
+let usuarioRegistered =[];
+usuarioRegistered.push(admin)
+let newUser;
+
+let usuarios = JSON.parse(localStorage.getItem("usuariosKey")) || [admin];
 
 // Seteamos el localstorage
 localStorage.setItem("usuariosKey", JSON.stringify(usuarios));
@@ -14,8 +18,8 @@ localStorage.setItem("usuariosKey", JSON.stringify(usuarios));
 class Usuario {
   constructor(nombre, email, contraseña) {
     (this.nombre = nombre),
-      (this.email = email),
-      (this.contraseña = contraseña);
+    (this.contraseña = contraseña);
+    (this.email = email)
   }
 }
 
@@ -35,17 +39,24 @@ const crearUsuario = (e) => {
       const usuario = new Usuario(nombre, email, contraseña);
 
       // Pusheamos el usuario al array de usuarios y lo guardamos en el localStorage
-      usuarios.push(usuario);
-      localStorage.setItem("usuariosKey", JSON.stringify(usuarios));
-
+      // usuarios.push(usuario);
+      console.log(usuario)
+      newUser = JSON.stringify(usuario)
+      localStorage.setItem("newUser", JSON.stringify(usuario));
+      console.log(usuarios)
       // Redirigimos al login
-      window.location.replace("login.html");
+      // window.location.replace("login.html");
     } else {
       console.error("El administrador ya existe");
     }
   } else {
     console.error("Faltan datos");
   }
+  usuarios = JSON.stringify(usuarios)
+  usuarioRegistered.push(usuarios)
+  console.log(usuarioRegistered)
+  // usuarios = localStorage.setItem('usuariosKey',usuarioRegistered)
+  console.log(usuarios)
 };
 
 function loginBtn () {window.location.replace('login.html')}

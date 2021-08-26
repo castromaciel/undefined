@@ -1,6 +1,6 @@
 const admin = {
   nombre: "Admin",
-  contraseña: "admin",
+  contraseña: "administrador",
   email: "none",
 };
 const usuarios = JSON.parse(localStorage.getItem("usuariosKey")) || [admin];

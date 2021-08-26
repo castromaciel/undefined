@@ -13,7 +13,7 @@ header{
   outline: thick double #00d460;
 }
 body{
-  background-image: url(../images/imageacercade/fondo\ 2.jpg);
+  background-image: url(/images/fondo2.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -33,9 +33,6 @@ ul li a:hover{
 }
 ul{
   list-style: none;
-}
-.fondMain{
-  background-image: url(../images/imageacercade/paisajedinosauriogoogle.jpg);
 }
 .cardSize{
   width: 18rem;

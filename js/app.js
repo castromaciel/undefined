@@ -1,11 +1,22 @@
+let games = [];
 let allGames = [];
+let filter;
 let url = "http://localhost:3000/games";
+const admin = {
+  nombre: 'Admin',
+  contraseña :'admin',
+  email:'none'
+}
+
 fetch(url)
   .then((response) => response.json())
   .then((games) => {
     chargingGames(games);
   });
-
+axios.get('http://localhost:3000/games')
+  .then(apiGames => {
+    filterFunction(apiGames)
+  })
 class Categories {
   constructor(games) {
     this.games = games;
@@ -114,11 +125,60 @@ class Categories {
     }
   }
 }
-let games = [];
-axios.get("http://localhost:3000/games").then((apiGames) => {
-  filterFunction(apiGames);
-});
-let filter;
+// localStorage.removeItem('usuariosKey')
+let usuarioRegistered =[];
+usuarioRegistered.push(admin)
+// usuarioRegistered.push(localStorage.getItem('usuariosKey'))
+
+if (usuarioRegistered.length === 1) {
+  console.log(usuarioRegistered[0])
+  localStorage.setItem('usuariosKey',JSON.stringify(usuarioRegistered[0]))
+  console.log('Solo hay admin')
+}else{
+  for (const key in usuarioRegistered) {
+    console.log(usuarioRegistered[key])
+    // if (Object.hasOwnProperty.call(object, key)) {
+    //   const element = object[key];
+      
+    // }
+  }
+}
+
+let usuario =  JSON.parse(localStorage.getItem('usuarioLogueado'))
+let user = document.getElementById('users')
+let loginAdmin = document.getElementById('loginAdmin')
+let registerAdmin = document.getElementById('registerAdmin')
+
+// console.log(usuario)
+
+if (usuario === null) {
+  // console.log('no hay usuario logueado')
+}else if(usuario.nombre === 'Admin'){
+  let adminNav = document.createElement('li')
+  adminNav.classList = 'nav-item me-4'
+  adminNav.innerHTML = `
+    <a class="fs-4 nav-link active" aria-current="page" href="/html/admin.html">Admin</a>
+    `;
+  let closeAccount = document.createElement('li')
+  closeAccount.classList = 'nav-item me-4'
+  closeAccount.innerHTML = `
+    <button class="fs-4 nav-link active nav-btn" type="button" aria-current="page" onclick="closeAccount()">Cerrar sesión</button>
+    `;
+  user.appendChild(adminNav)
+  user.appendChild(closeAccount)
+  user.removeChild(loginAdmin)
+  user.removeChild(registerAdmin)
+}else{
+  let closeAccount = document.createElement('li')
+  closeAccount.classList = 'nav-item me-4'
+  closeAccount.innerHTML = `
+    <button type="button" class="fs-4 nav-link active nav-btn" aria-current="page" onclick="closeAccount()">Cerrar sesión</button>
+    `;
+  user.appendChild(closeAccount)
+  user.removeChild(registerAdmin)
+  user.removeChild(loginAdmin)  
+}
+
 function filterFunction(apiGames) {
   games.push(...apiGames.data);
   filter = new Categories(games);
@@ -151,67 +211,3 @@ function closeAccount() {
   localStorage.removeItem("usuarioLogueado");
   window.location.replace("/index.html");
 }
-let games = [];
-axios.get("http://localhost:3000/games").then((apiGames) => {
-  filterFunction(apiGames);
-});
-const admin = {
-  nombre: "Admin",
-  contraseña: "admin",
-  email: "none",
-};
-// localStorage.removeItem('usuariosKey')
-let usuarioRegistered = [];
-usuarioRegistered.push(admin);
-// usuarioRegistered.push(localStorage.getItem('usuariosKey'))
-
-if (usuarioRegistered.length === 1) {
-  console.log(usuarioRegistered[0]);
-  localStorage.setItem("usuariosKey", JSON.stringify(usuarioRegistered[0]));
-  console.log("Solo hay admin");
-} else {
-  for (const key in usuarioRegistered) {
-    console.log(usuarioRegistered[key]);
-    // if (Object.hasOwnProperty.call(object, key)) {
-    //   const element = object[key];
-
-    // }
-  }
-}
-
-let usuario = JSON.parse(localStorage.getItem("usuarioLogueado"));
-let user = document.getElementById("users");
-let loginAdmin = document.getElementById("loginAdmin");
-let registerAdmin = document.getElementById("registerAdmin");
-
-// console.log(usuario)
-
-if (usuario === null) {
-  // console.log('no hay usuario logueado')
-} else if (usuario.nombre === "Admin") {
-  let adminNav = document.createElement("li");
-  adminNav.classList = "nav-item me-4";
-  adminNav.innerHTML = `
-    <a class="fs-4 nav-link active" aria-current="page" href="/html/admin.html">Admin</a>
-    `;
-  let closeAccount = document.createElement("li");
-  closeAccount.classList = "nav-item me-4";
-  closeAccount.innerHTML = `
-    <button class="fs-4 nav-link active nav-btn" type="button" aria-current="page" onclick="closeAccount()">Cerrar sesión</button>
-    `;
-  user.appendChild(adminNav);
-  user.appendChild(closeAccount);
-  user.removeChild(loginAdmin);
-  user.removeChild(registerAdmin);
-} else {
-  let closeAccount = document.createElement("li");
-  closeAccount.classList = "nav-item me-4";
-  closeAccount.innerHTML = `
-    <button type="button" class="fs-4 nav-link active nav-btn" aria-current="page" onclick="closeAccount()">Cerrar sesión</button>
-    `;
-  user.appendChild(closeAccount);
-  user.removeChild(registerAdmin);
-  user.removeChild(loginAdmin);
-}
-
-let filter;

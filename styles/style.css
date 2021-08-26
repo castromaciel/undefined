@@ -1,4 +1,4 @@
-:root{
+:root {
   --first: #f5bb3f;
   --second: #fd432e;
   --gray: #575757;
@@ -9,32 +9,31 @@
   margin: 0;
   box-sizing: border-box;
 }
-body{
-  background: linear-gradient(to bottom left, var(--first),var(--second));
+body {
+  background: linear-gradient(to bottom left, var(--first), var(--second));
 }
-.fondNavbar{
+.fondNavbar {
   background-color: var(--gray2);
 }
-.nav-link:hover{
+.nav-link:hover {
   transition: 100ms;
   transform: scale(1.09);
 }
-.nav-btn{
+.nav-btn {
   border: none;
   background: none;
 }
-.hero{
-  background: linear-gradient(to bottom right,rgb(0, 0, 1), var(--second));
+.hero {
+  background: linear-gradient(to bottom right, rgb(0, 0, 1), var(--second));
   padding: 5% 0;
-  box-shadow: 
-    4px 8px 10px 0 rgba(0, 0, 0, 0.5),
-    0 6px 20px 0 rgba(0, 0, 0, 0.5);
-  color: rgb(255,255,255);
+  box-shadow: 4px 8px 10px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+  color: rgb(255, 255, 255);
 }
-.row{
+.row {
   --bs-gutter-x: 0;
 }
-.carousel-control-next, .carousel-control-prev{
+.carousel-control-next,
+.carousel-control-prev {
   width: 5%;
   opacity: 0;
 }
@@ -67,65 +66,65 @@ body{
   border: 1px solid var(--first);
 }
 .boxShadowFull {
-  box-shadow: 1px 0px 26px 4px rgba(0,0,0,0.68);
-  -webkit-box-shadow: 1px 0px 26px 4px rgba(0,0,0,0.68);
-  -moz-box-shadow: 1px 0px 26px 4px rgba(0,0,0,0.68);
+  box-shadow: 1px 0px 26px 4px rgba(0, 0, 0, 0.68);
+  -webkit-box-shadow: 1px 0px 26px 4px rgba(0, 0, 0, 0.68);
+  -moz-box-shadow: 1px 0px 26px 4px rgba(0, 0, 0, 0.68);
 }
 .cardShadowFull {
-  box-shadow: 1px 0px 7px 4px rgba(245,175,25,0.68);
-  -webkit-box-shadow: 1px 0px 7px 4px rgba(245,175,25,0.68);
-  -moz-box-shadow: 1px 0px 7px 4px rgba(245,175,25,0.68);
+  box-shadow: 1px 0px 7px 4px rgba(245, 175, 25, 0.68);
+  -webkit-box-shadow: 1px 0px 7px 4px rgba(245, 175, 25, 0.68);
+  -moz-box-shadow: 1px 0px 7px 4px rgba(245, 175, 25, 0.68);
 }
 
-.reviewText{
+.reviewText {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 6;
   line-clamp: 6;
   overflow: hidden;
 }
-.reviewTextTable{
+.reviewTextTable {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
   line-clamp: 1;
   overflow: hidden;
 }
-.modal-content{
+.modal-content {
   background: #212529;
-  color:#FFFFFF;
+  color: #ffffff;
 }
-.bi{
+.bi {
   cursor: pointer;
 }
-.star.fav{
+.star.fav {
   color: gold;
 }
-table{
+table {
   border-collapse: inherit;
 }
 /*Inicio Estilos Noticias*/
-.sectionNews{
+.sectionNews {
   display: flex;
   justify-content: space-evenly;
   /* padding: 5rem; */
 }
-.sectionNews .card-title{
+.sectionNews .card-title {
   display: flex;
-  justify-content: center;  
+  justify-content: center;
   padding: 1rem;
   margin-top: 1rem;
 }
-.sectionNews .card-body{
+.sectionNews .card-body {
   background: var(--gray2);
   border-bottom-right-radius: 20px;
   border-top-left-radius: 20px;
 }
-.horizontalNews{
+.horizontalNews {
   display: inherit;
   padding: 2rem;
 }
-.horizontalNews .card-body{
+.horizontalNews .card-body {
   background: var(--gray2);
   border-bottom-right-radius: 20px;
   border-top-left-radius: 20px;
@@ -145,6 +144,9 @@ footer a {
   text-decoration: none;
   color: black;
 }
-.fondSocial{
+.footerMargin {
+  margin-top: 5rem;
+}
+.fondSocial {
   background-color: var(--first);
 }

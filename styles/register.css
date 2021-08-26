@@ -65,7 +65,7 @@ main {
 }
 
 .cajaTrasera button:hover {
-  background:rgba(255, 255, 255, 0.911);
+  background: rgba(255, 255, 255, 0.911);
   color: rgba(0, 0, 0, 0.842);
 }
 
@@ -85,17 +85,17 @@ main {
   background: #333333f5;
   position: absolute;
   border-radius: 20px;
-  border: solid 3px #1BCC96;
-  box-shadow: 1px 0px 26px 4px rgba(0,0,0,0.68);
-  -webkit-box-shadow: 1px 0px 26px 4px rgba(0,0,0,0.68);
-  -moz-box-shadow: 1px 0px 26px 4px rgba(0,0,0,0.68);
+  border: solid 3px #1bcc96;
+  box-shadow: 1px 0px 26px 4px rgba(0, 0, 0, 0.68);
+  -webkit-box-shadow: 1px 0px 26px 4px rgba(0, 0, 0, 0.68);
+  -moz-box-shadow: 1px 0px 26px 4px rgba(0, 0, 0, 0.68);
 }
 
 .contenedorLoginRegister form h2 {
   font-size: 30px;
   text-align: center;
   margin-bottom: 20px;
-  color: #1BCC96;
+  color: #1bcc96;
 }
 
 .formularioRegister input {
@@ -117,11 +117,11 @@ main {
   color: white;
   cursor: pointer;
   transition: all 300ms;
-  border: solid #1BCC95;
+  border: solid #1bcc95;
   font-weight: 600;
 }
-.contenedorLoginRegister form button:hover{
-  background:rgba(255, 255, 255, 0.911);
+.contenedorLoginRegister form button:hover {
+  background: rgba(255, 255, 255, 0.911);
   color: black;
 }
 

@@ -1,64 +1,79 @@
 let allGames = [];
-let url = 'http://localhost:3000/games';
+let url = "http://localhost:3000/games";
 fetch(url)
-.then(response => response.json())
-.then(games => 
-  {
-    chargingGames(games)
-  })
-  let games = [];
-  let filter;
-  axios.get('http://localhost:3000/games')
-  .then(apiGames => {
-    filterFunction(apiGames)
-  })
-class Categories{
-  constructor(games){
+  .then((response) => response.json())
+  .then((games) => {
+    chargingGames(games);
+  });
+
+class Categories {
+  constructor(games) {
     this.games = games;
   }
-  saveLocalStorage (saveArr) {
-  localStorage.setItem("arrLocal" ,JSON.stringify(saveArr))
+  saveLocalStorage(saveArr) {
+    localStorage.setItem("arrLocal", JSON.stringify(saveArr));
   }
-  saveById () {
-    let newPage =JSON.parse(localStorage.getItem("arrLocal"))
-      newPage.forEach(element => {
-        if (element.id == event.target.parentNode.parentNode.id) {
-          console.log(element.id)
-          localStorage.setItem("detailCard", JSON.stringify(element))
-        }
-      });
+  saveById() {
+    let newPage = JSON.parse(localStorage.getItem("arrLocal"));
+    newPage.forEach((element) => {
+      if (element.id == event.target.parentNode.parentNode.id) {
+        console.log(element.id);
+        localStorage.setItem("detailCard", JSON.stringify(element));
+      }
+    });
   }
   filtered(cat, games) {
     this.clearCard();
     let index = 0;
     let gamesFil = [];
     games.forEach((game) => {
-      game.categories.forEach ((category) => {
-      if (category == cat){
-      gamesFil.push(game)
-      this.cardCreate(gamesFil[index].images[0], gamesFil[index].name, gamesFil[index].description, "./html/gamedetail.html", gamesFil[index].price, game.id )
-      index++;
-    }
-  })
-  })
-  this.saveLocalStorage(gamesFil);
+      game.categories.forEach((category) => {
+        if (category == cat) {
+          gamesFil.push(game);
+          this.cardCreate(
+            gamesFil[index].images[0],
+            gamesFil[index].name,
+            gamesFil[index].description,
+            "./html/gamedetail.html",
+            gamesFil[index].price,
+            game.id
+          );
+          index++;
+        }
+      });
+    });
+    this.saveLocalStorage(gamesFil);
   }
   standOut() {
     this.clearCard();
     let arrStandOut = [];
     games.forEach((standOut) => {
       if (standOut.outstanding) {
-        arrStandOut.push(standOut)
-        this.cardCreate(standOut.images[0], standOut.name, standOut.description, "./html/gamedetail.html", standOut.price, standOut.id)
+        arrStandOut.push(standOut);
+        this.cardCreate(
+          standOut.images[0],
+          standOut.name,
+          standOut.description,
+          "./html/gamedetail.html",
+          standOut.price,
+          standOut.id
+        );
       }
-    })
-    this.saveLocalStorage (arrStandOut);
-  } 
-  allGames () {
-    this.clearCard()
-    this.saveLocalStorage (games)
-    games.forEach(game => {
-      this.cardCreate(game.images[0], game.name, game.description, "./html/gamedetail.html", game.price, game.id)
+    });
+    this.saveLocalStorage(arrStandOut);
+  }
+  allGames() {
+    this.clearCard();
+    this.saveLocalStorage(games);
+    games.forEach((game) => {
+      this.cardCreate(
+        game.images[0],
+        game.name,
+        game.description,
+        "./html/gamedetail.html",
+        game.price,
+        game.id
+      );
     });
   }
   cardCreate(imgS, cardTitle, subTitle, linkButton, price, id) {
@@ -86,7 +101,9 @@ class Categories{
     let boton = document.createElement("a");
     boton.className = "btn btn-warning";
     boton.innerText = `Comprar $:${price}`;
-    boton.addEventListener("click", (event) => {this.saveById()})
+    boton.addEventListener("click", (event) => {
+      this.saveById();
+    });
     boton.setAttribute("href", linkButton);
     cardBody.appendChild(boton);
   }
@@ -97,6 +114,11 @@ class Categories{
     }
   }
 }
+let games = [];
+axios.get("http://localhost:3000/games").then((apiGames) => {
+  filterFunction(apiGames);
+});
+let filter;
 function filterFunction(apiGames) {
   games.push(...apiGames.data);
   filter = new Categories(games);
@@ -125,72 +147,71 @@ function chargingGames(gamesList) {
     }
   });
 }
-function closeAccount(){
+function closeAccount() {
   localStorage.removeItem("usuarioLogueado");
-  window.location.replace('/index.html');
+  window.location.replace("/index.html");
 }
 let games = [];
-axios.get('http://localhost:3000/games')
-.then(apiGames => {
-  filterFunction(apiGames)
-})
+axios.get("http://localhost:3000/games").then((apiGames) => {
+  filterFunction(apiGames);
+});
 const admin = {
-  nombre: 'Admin',
-  contraseña :'admin',
-  email:'none'
-}
+  nombre: "Admin",
+  contraseña: "admin",
+  email: "none",
+};
 // localStorage.removeItem('usuariosKey')
-let usuarioRegistered =[];
-usuarioRegistered.push(admin)
+let usuarioRegistered = [];
+usuarioRegistered.push(admin);
 // usuarioRegistered.push(localStorage.getItem('usuariosKey'))
 
 if (usuarioRegistered.length === 1) {
-  console.log(usuarioRegistered[0])
-  localStorage.setItem('usuariosKey',JSON.stringify(usuarioRegistered[0]))
-  console.log('Solo hay admin')
-}else{
+  console.log(usuarioRegistered[0]);
+  localStorage.setItem("usuariosKey", JSON.stringify(usuarioRegistered[0]));
+  console.log("Solo hay admin");
+} else {
   for (const key in usuarioRegistered) {
-    console.log(usuarioRegistered[key])
+    console.log(usuarioRegistered[key]);
     // if (Object.hasOwnProperty.call(object, key)) {
     //   const element = object[key];
-      
+
     // }
   }
 }
 
-let usuario =  JSON.parse(localStorage.getItem('usuarioLogueado'))
-let user = document.getElementById('users')
-let loginAdmin = document.getElementById('loginAdmin')
-let registerAdmin = document.getElementById('registerAdmin')
+let usuario = JSON.parse(localStorage.getItem("usuarioLogueado"));
+let user = document.getElementById("users");
+let loginAdmin = document.getElementById("loginAdmin");
+let registerAdmin = document.getElementById("registerAdmin");
 
 // console.log(usuario)
 
 if (usuario === null) {
   // console.log('no hay usuario logueado')
-}else if(usuario.nombre === 'Admin'){
-  let adminNav = document.createElement('li')
-  adminNav.classList = 'nav-item me-4'
+} else if (usuario.nombre === "Admin") {
+  let adminNav = document.createElement("li");
+  adminNav.classList = "nav-item me-4";
   adminNav.innerHTML = `
     <a class="fs-4 nav-link active" aria-current="page" href="/html/admin.html">Admin</a>
     `;
-  let closeAccount = document.createElement('li')
-  closeAccount.classList = 'nav-item me-4'
+  let closeAccount = document.createElement("li");
+  closeAccount.classList = "nav-item me-4";
   closeAccount.innerHTML = `
     <button class="fs-4 nav-link active nav-btn" type="button" aria-current="page" onclick="closeAccount()">Cerrar sesión</button>
     `;
-  user.appendChild(adminNav)
-  user.appendChild(closeAccount)
-  user.removeChild(loginAdmin)
-  user.removeChild(registerAdmin)
-}else{
-  let closeAccount = document.createElement('li')
-  closeAccount.classList = 'nav-item me-4'
+  user.appendChild(adminNav);
+  user.appendChild(closeAccount);
+  user.removeChild(loginAdmin);
+  user.removeChild(registerAdmin);
+} else {
+  let closeAccount = document.createElement("li");
+  closeAccount.classList = "nav-item me-4";
   closeAccount.innerHTML = `
     <button type="button" class="fs-4 nav-link active nav-btn" aria-current="page" onclick="closeAccount()">Cerrar sesión</button>
     `;
-  user.appendChild(closeAccount)
-  user.removeChild(registerAdmin)
-  user.removeChild(loginAdmin)  
+  user.appendChild(closeAccount);
+  user.removeChild(registerAdmin);
+  user.removeChild(loginAdmin);
 }
 
 let filter;

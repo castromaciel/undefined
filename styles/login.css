@@ -110,6 +110,20 @@
   color: black;
 }
 
-@media (min-width: 992px){
-
+@media (max-width: 992px){
+  .mainLogin{
+    margin-top: 75px;
+  }
+ .cajaTrasera{
+   display: none;
+ }
+ .contenedorTodo{
+   display: flex;
+   justify-content: center;
+ }
+ .contenedorLogin{
+   left: 0;
+   top: 0;
+   align-items: unset;
+ }
 }

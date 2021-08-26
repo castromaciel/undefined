@@ -17,7 +17,8 @@ form.addEventListener('submit',  (event) => {
   event.preventDefault()
 }) 
 
-let usuario =  JSON.parse(localStorage.getItem('usuariosKey'))
+let usuario =  JSON.parse(localStorage.getItem('usuarioLogueado'))
+
 let user = document.getElementById('users')
 let loginAdmin = document.getElementById('loginAdmin')
 let registerAdmin = document.getElementById('registerAdmin')

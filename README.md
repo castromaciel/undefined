@@ -1,4 +1,4 @@
-<h1 align='center'> Undefined Games </h1>
+<h1 align='center'> Undefined Games</h1>
 <h2 align='center'> Undefined </h2>
 </br>
 <ul>

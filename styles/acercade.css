@@ -18,9 +18,6 @@ body{
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
-/* .cardSize{
-  width: 18rem;
-} */
 .imgSize{
   width: 353px;
   height: 350px;
@@ -36,6 +33,15 @@ ul li a:hover{
 }
 ul{
   list-style: none;
+}
+.fondMain{
+  background-image: url(../images/imageacercade/paisajedinosauriogoogle.jpg);
+}
+.cardSize{
+  width: 18rem;
+}
+footer .container-fluid{ 
+  padding: 0;
 }
 footer a{
   text-decoration: none;

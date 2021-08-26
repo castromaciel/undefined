@@ -1,7 +1,8 @@
+let games = [];
 let allGames = [];
 let url = 'http://localhost:3000/games';
 let filter;
-let games = [];
+
 fetch(url)
 .then(response => response.json())
 .then(games => 
@@ -32,7 +33,7 @@ class Categories{
     this.clearCard();
     let index = 0;
     let gamesFil = [];
-    games.forEach((game) => {
+    gamess.forEach((game) => {
       game.categories.forEach ((category) => {
         if (category == cat){
           gamesFil.push(game)
@@ -73,7 +74,7 @@ class Categories{
     image.className = "card-img-top";
     card.appendChild(image);
     let cardBody = document.createElement("div");
-    cardBody.className = "card-body";
+    cardBody.className = "card-body d-flex flex-column justify-content-around text-center";
     card.appendChild(cardBody);
     let title = document.createElement("h5");
     title.className = "card-title";
@@ -84,8 +85,8 @@ class Categories{
     subtitle.innerText = subTitle;
     cardBody.appendChild(subtitle);
     let boton = document.createElement("a");
-    boton.className = "btn btn-warning";
-    boton.innerText = `Comprar $:${price}`;
+    boton.className = "btn btn-warning align-self-center d-inline";
+    boton.innerText = `Ver más`;
     boton.addEventListener("click", (event) => {this.saveById()})
     boton.setAttribute("href", linkButton);
     cardBody.appendChild(boton);

@@ -10,36 +10,34 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 </head>
 <body>
-  <header class="">
-    <nav class="navbar navbar-expand-lg navbar-dark fondNavbar shadow sticky-top" id="nav">
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark fondNavbar fixed-top" id="nav">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <!-- <i class="fs-3 ms-3 text-white bi bi-search">UndefinedGames</i> -->
-          <img src="/images/logo.png" alt="" width="80" height="50"
+          <img src="/images/logo.png" class="logoNav" alt="" width="80" height="50"
           class="ms-lg-5">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
         </button>
         <div class="justify-content-end collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav align-items-end">
+          <ul class="navbar-nav align-items-end" id="users">
             <li class="nav-item me-4">
-              <a class="fs-4 nav-link active" aria-current="page" href="./index.html">Inicio</a>
+              <a class="fs-4 nav-link active" aria-current="page" href="/index.html">Inicio</a>
             </li>
-            <li class="nav-item me-4">
+            <li class="nav-item me-4" id="loginAdmin">
               <a class="fs-4 nav-link active" href="/html/login.html">Login</a>
             </li>
-            <li class="nav-item me-4">
+            <li class="nav-item me-4" id="registerAdmin">
               <a class="fs-4 nav-link active" href="/html/register.html">Registro</a>
-            </li>
-            <li class="nav-item me-4">
-              <a class="fs-4 nav-link active" href="#noticias">Noticias</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
   </header>
-  <div class="container my-5 blur" ><h1 id="titleGame">Nombre del Juego</h1></div>
+  <main class="pt-5 mt-5">
+  <div class="container my-5 py-2 blur" ><h1 id="titleGame">Nombre del Juego</h1></div>
   <section class="container bgDetail boxShadowFull">
     <div class="row ">
     <div class="col-sm-12 col-md-12 col-lg-8 g-0">
@@ -62,30 +60,76 @@
         </button>
       </div>
     </div>
-      <div class="d-flex flex-sm-col justify-content-between flex-md-column mt-sm-3 mt-md-3 mt-lg-0 col-sm-12 col-md-12 col-lg-4 g-0">
-        <img class="img-fluid" id="img0" src="" alt="">
+      <div class="justify-content-between flex-sm-col flex-md-column flex-lg-none mt-sm-3 mt-md-3 mt-lg-0  col-md-12 col-lg-4 g-0">
+        <img class="img-fluid w-100" id="img0" src="" alt="">
         <h3 class="description text-center">Descripción</h3>
         <p class="description" id="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim sint magnam deleniti dicta iusto eaque? Aliquid a quae eum laborum non reprehenderit! Doloremque harum alias id debitis similique aspernatur iusto.
         Blanditiis maxime saepe ab iusto hic tenetur sapiente maiores autem sint voluptates provident error quis voluptate enim nisi dolore facilis, debitis perferendis architecto .</p>
-        <div id="containerButton">
-          
-        </div>
+        <div class="d-flex justify-content-center mb-3" id="containerButton"></div>
       </div>
     </div>
   </section>
   <!-- Requeriments -->
-  <section class="container my-5 boxShadowFull">
-    <div class="row">
-      <div class="d-flex flex-column  align-items-center col-sm-12 col-md-12 col-lg6 containerRequirements">
-        <div><i class="bi bi-cpu"></i> <h5>sa</h5></div>
-        <div><i class="bi bi-cpu"></i> <h5>sa</h5></div>
-        
+  <section class="container">
+    <div class="row my-5 justify-content-evenly">
+      <div class="col-sm-12 col-md-12 col-lg-5 mt-3 boxShadowFull containerRequirements">
+        <h2 class="hBorder">Requisitos minimos:</h2> <br>
+        <strong>SO:</strong><p id="soMin"></p>
+        <strong>Procesador:</strong><p id="procMin"></p>
+        <strong>Memoria (RAM):</strong><p id="memMin"></p>
+        <strong>Targeta grafica:</strong><p id="graphicsMin"></p>
+        <strong>Directx:</strong><p id="dxMin"></p>
+        <strong>Espacio en disco:</strong><p id="storageMin"></p>
       </div>
-      <div class="col-sm-12 col-md-12 col-lg6 containerRequirements">
-      
+      <div class="col-sm-12 col-md-12 col-lg-5 mt-3 boxShadowFull containerRequirements">
+        <h2 class="hBorder">Requisitos maximo:</h2> <br>
+        <strong>SO:</strong><p id="soMax"></p>
+        <strong>Procesador:</strong><p id="procMax"></p>
+        <strong>Memoria (RAM):</strong><p id="memMax"></p>
+        <strong>Targeta grafica:</strong><p id="graphicsMax"></p>
+        <strong>Directx:</strong><p id="dxMax"></p>
+        <strong>Espacio en disco:</strong><p id="storageMax"></p>
       </div>
     </div>
   </section>
+  </main>
+  <footer>
+    <div class="container-fluid footerMargin">
+      <div class="row">
+        <div class=" col-12 col-sm-6 fondSocial justif y-content-center align-items-center">
+          <div class="d-flex justify-content-evenly"> <!--No funcionaba el justify xq no tenia d-flex-->
+            <a href="/html/404.html" target="_blank"> <!--Enviar a pag 404-->
+              <i class="bi bi-instagram fs-4"></i>
+            </a>
+            <a href="/html/404.html" target="_blank">
+              <i class="bi bi-twitch fs-4"></i>
+            </a>
+            <a href="/html/404.html" target="_blank">
+              <i class="bi bi-facebook fs-4"></i>
+            </a>
+            <a href="/html/404.html" target="_blank">
+              <i class="bi bi-whatsapp fs-4"></i>
+            </a>
+            <a href="/html/404.html" target="_blank">
+              <i class="bi bi-youtube fs-4"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 bg-secondary d-flex justify-content-center align-items-center">
+          <span><a href="/html/acercade.html" class="fs-4">Acerca de Nosotros </a></span> |
+          <span><a href="/html/404.html" target=_blank class="fs-5"> Contacto</a></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="p-3 col-12 bg-dark d-flex flex-column justify-content-center align-items-center">
+          <a href="#destacados">
+            <img src="/images/logo.png" class="logoNav" width="80" height="50" alt="">
+          </a>
+          <p class="text-white mb-0">Undefined © 2021 Todos los derechos reservados</p>
+        </div>
+      </div>    
+    </div>
+  </footer> 
   <script src="/js/gamedetail.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 </body>

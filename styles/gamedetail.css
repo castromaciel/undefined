@@ -1,6 +1,6 @@
 :root{
-  --first: #f5bb3f;
-  --second: #fd432e;
+  --first: #1BCB95;
+  --second: #00aa714f;
   --gray: #575757;
   --gray2: #212529;
   --green: #1BCB95;
@@ -19,6 +19,10 @@ body {
 }
 .fondNavbar{
   background-color: var(--gray2);
+  border-bottom: 2px solid var(--green);
+}
+.fondNavbar{
+  background-color: var(--gray2);
 }
 .nav-link:hover{
   transition: 100ms;
@@ -27,7 +31,7 @@ body {
 .blur {
   background-color: #1BCB95;
   ;
-  opacity: 0.5;
+  opacity: 0.8;
 }
 .bgDetail {
   background-color: var(--gray2);
@@ -50,9 +54,58 @@ body {
   background-color: var(--green);
   border-color: var(--green);
 }
+.cardShadowFull {
+  box-shadow: 1px 0px 7px 4px var(--first);
+  -webkit-box-shadow: 1px 0px 7px 4px var(--first);
+  -moz-box-shadow: 1px 0px 7px 4px var(--first);
+}
+.btn-warning {
+  color: white;
+  background-color: var(--gray2);
+  border-color: var(--green);
+}
+.btn-warning:hover {
+  color: white;
+  background-color: var(--gray);
+  border-color: var(--green);
+}
+.btn-check:focus + .btn-warning, .btn-warning:focus {
+  color:white;
+  background-color: var(--gray2);
+  border-color: var(--green);
+  box-shadow: 0 0 0 0.25rem var(--second);
+}
+.btn-check:checked + .btn-warning, .btn-check:active + .btn-warning, .btn-warning:active, .btn-warning.active, .show > .btn-warning.dropdown-toggle {
+  color: white;
+  background-color: var(--gray2);
+  border-color: var(--green);
+}
+.btn-check:checked + .btn-warning:focus, .btn-check:active + .btn-warning:focus, .btn-warning:active:focus, .btn-warning.active:focus, .show > .btn-warning.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.25rem var(--green);
+}
 .containerRequirements {
-  background-color: var(--green);
+  color: white;
+  background-color: var(--gray2);
+  border: 1px solid var(--first);
 }
 .bi {
   font-size: 30px;
+}
+
+footer a {
+  text-decoration: none;
+  color: black;
+}
+footer a:hover{
+  color: black;
+}
+.fondSocial {
+  background-color: var(--first);
+}
+.logoNav{
+  -webkit-filter: drop-shadow(3px 3px 3px var(--second));
+  filter: drop-shadow(3px 3px 3px var(--second));
+}
+.hBorder {
+  border-bottom: 1px solid var(--first)
 }

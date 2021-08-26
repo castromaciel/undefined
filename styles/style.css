@@ -172,6 +172,13 @@ table {
   /* border-bottom-right-radius: 20px; */
   /* border-top-left-radius: 20px; */
 }
+.text-clamped{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+  line-clamp: 7;
+  overflow: hidden;
+}
 details summary::after {
   content: "Leer mas...";
 }

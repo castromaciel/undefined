@@ -1,7 +1,4 @@
-:root{
-  --first: #F5AF19;
-  --second: #F12711;
-}
+
 *{
   padding: 0;
   margin: 0;
@@ -36,6 +33,16 @@ ul{
 }
 .cardSize{
   width: 18rem;
+}
+.btn-warning {
+  color: white;
+  background-color: var(--gray2);
+  border-color: var(--green);
+}
+.btn-warning:hover {
+  color: white;
+  background-color: var(--gray);
+  border-color: var(--green);
 }
 footer .container-fluid{ 
   padding: 0;

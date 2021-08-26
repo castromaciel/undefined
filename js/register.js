@@ -13,9 +13,8 @@ localStorage.setItem("usuariosKey", JSON.stringify(usuarios));
 // Creamos una clase para nuestros usuarios
 class Usuario {
   constructor(nombre, email, contraseña) {
-    (this.nombre = nombre),
-      (this.email = email),
-      (this.contraseña = contraseña);
+    (this.nombre = nombre), (this.contraseña = contraseña);
+    this.email = email;
   }
 }
 
@@ -47,3 +46,7 @@ const crearUsuario = (e) => {
     console.error("Faltan datos");
   }
 };
+
+function loginBtn() {
+  window.location.replace("login.html");
+}

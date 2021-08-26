@@ -1,7 +1,8 @@
 :root {
-  --first: #f5af19;
-  --second: #f12711;
+  --first: #f5bb3f;
+  --second: #fd432e;
   --gray: #575757;
+  --gray2: #212529;
 }
 * {
   padding: 0;
@@ -12,24 +13,18 @@ body {
   background: linear-gradient(to bottom left, var(--first), var(--second));
 }
 .fondNavbar {
-  /* background-color: var(--first); */
-  background: linear-gradient(90deg, rgb(0, 0, 1), var(--second), var(--first));
-  border-bottom: 2px;
+  background-color: var(--gray2);
 }
-.pageLink {
-  transition: 200ms;
-  border: 0;
-  display: block;
-  padding: 0.5rem 1rem;
-  text-decoration: none;
-  color: black;
+.nav-link:hover {
+  transition: 100ms;
+  transform: scale(1.09);
 }
-.pageLink:hover {
-  color: white;
-  text-decoration: none;
+.nav-btn {
+  border: none;
+  background: none;
 }
 .hero {
-  background: linear-gradient(to bottom right, var(--second), rgb(0, 0, 1));
+  background: linear-gradient(to bottom right, rgb(0, 0, 1), var(--second));
   padding: 5% 0;
   box-shadow: 4px 8px 10px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
   color: rgb(255, 255, 255);
@@ -121,8 +116,7 @@ table {
   margin-top: 1rem;
 }
 .sectionNews .card-body {
-  /* background: linear-gradient(to bottom left, var(--first),var(--second)); */
-  background: linear-gradient(to bottom right, var(--second), rgb(0, 0, 1));
+  background: var(--gray2);
   border-bottom-right-radius: 20px;
   border-top-left-radius: 20px;
 }
@@ -131,29 +125,7 @@ table {
   padding: 2rem;
 }
 .horizontalNews .card-body {
-  /* background: linear-gradient(to bottom left, var(--first),var(--second)); */
-  background: linear-gradient(to bottom right, var(--second), rgb(0, 0, 1));
-}
-.fondNavbar {
-  background-color: var(--first);
-}
-.pageLink {
-  transition: 200ms;
-  background-color: var(--first);
-  border: 0;
-  display: block;
-  padding: 0.5rem 1rem;
-  text-decoration: none;
-  color: black;
-}
-.pageLink:hover {
-  color: white;
-  text-decoration: none;
-  background-color: var(--first);
-}
-
-footer .container-fluid {
-  /*Padre: Footer and container-fluid: Hijo!*/
+  background: var(--gray2);
   border-bottom-right-radius: 20px;
   border-top-left-radius: 20px;
 }

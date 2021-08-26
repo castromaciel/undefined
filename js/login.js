@@ -4,9 +4,6 @@ const admin = [{
   email: "none",
   }
 ];
-
-// localStorage.setItem('usuariosKey',JSON.stringify(admin))
-
 const usuarios = JSON.parse(localStorage.getItem('usuariosKey')) || [admin]
 
 const iniciarSesion = (e) => {

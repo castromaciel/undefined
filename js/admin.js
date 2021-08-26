@@ -16,10 +16,14 @@ const form = document.getElementById('newGame')
 form.addEventListener('submit',  (event) => {
   event.preventDefault()
 }) 
-let usuario =  JSON.parse(localStorage.getItem('usuarioLogeado'))
+
+let usuario =  JSON.parse(localStorage.getItem('usuariosKey'))
 let user = document.getElementById('users')
 let loginAdmin = document.getElementById('loginAdmin')
 let registerAdmin = document.getElementById('registerAdmin')
+console.log(usuario)
+
+
 if (usuario === null) {
 }else if(usuario.nombre === 'Admin'){
   let adminNav = document.createElement('li')
@@ -40,7 +44,7 @@ if (usuario === null) {
   let closeAccount = document.createElement('li')
   closeAccount.classList = 'nav-item me-4'
   closeAccount.innerHTML = `
-    <button type="button" class="fs-4 nav-link active nav-btn" aria-current="page" on>Cerrar sesión</button>
+    <button type="button" class="fs-4 nav-link active nav-btn" aria-current="page" onclick="closeAccount()">Cerrar sesión</button>
     `;
   user.appendChild(closeAccount)
   user.removeChild(registerAdmin)
@@ -282,10 +286,9 @@ function editedGames(editName,editPrice,editCategorie,editDescription,idGame){
   }
 }
 function closeAccount(){
-  localStorage.removeItem("usuarioLogeado");
+  localStorage.removeItem("usuarioLogueado");
   window.location.replace('/index.html');
 }
-
 function addImageUrl() {
   let inputUrl = document.createElement('div')
   inputUrl.innerHTML =`

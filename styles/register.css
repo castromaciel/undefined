@@ -5,7 +5,7 @@
 }
 
 body {
-  background-image: url(../img/bg4.jpg);
+  background-image: url(../images/fondo2.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -17,6 +17,7 @@ main {
   padding: 20px;
   margin: auto;
   margin-top: 100px;
+  font-family: sans-serif;
 }
 
 .contenedorTodo {
@@ -31,9 +32,8 @@ main {
   padding: 10px 20px;
   display: flex;
   justify-content: flex-end;
-
   backdrop-filter: blur(10px);
-  background-color: rgba(0, 128, 255, 0.5);
+  background-color: #1dcd951a;
 }
 
 .cajaTrasera div {
@@ -42,7 +42,8 @@ main {
   transition: all 500ms;
 }
 
-.cajaTrasera div p .cajaTrasera div button {
+.cajaTraseraLogin p,
+.cajaTraseraLogin button {
   margin-top: 30px;
 }
 
@@ -64,8 +65,8 @@ main {
 }
 
 .cajaTrasera button:hover {
-  background: #fff;
-  color: #46a2fd;
+  background:rgba(255, 255, 255, 0.911);
+  color: rgba(0, 0, 0, 0.842);
 }
 
 /*FORMULARIOS*/
@@ -75,49 +76,54 @@ main {
   width: 100%;
   max-width: 380px;
   position: relative;
-  top: -185px;
+  top: -210px;
   left: 10px;
 }
 .contenedorLoginRegister form {
   width: 100%;
-  padding: 80px 20px;
-  background: #fff;
+  padding: 70px 20px;
+  background: #333333f5;
   position: absolute;
   border-radius: 20px;
+  border: solid 3px #1BCC96;
+  box-shadow: 1px 0px 26px 4px rgba(0,0,0,0.68);
+  -webkit-box-shadow: 1px 0px 26px 4px rgba(0,0,0,0.68);
+  -moz-box-shadow: 1px 0px 26px 4px rgba(0,0,0,0.68);
 }
 
 .contenedorLoginRegister form h2 {
   font-size: 30px;
   text-align: center;
   margin-bottom: 20px;
-  color: #46a2fd;
+  color: #1BCC96;
 }
 
-.contenedorLoginRegister form input {
+.formularioRegister input {
   width: 100%;
   margin-top: 20px;
   padding: 10px;
   border: none;
-  background: #f2f2f2;
+  background-color: #f2f2f2;
   font-size: 16px;
   outline: none;
 }
 
 .contenedorLoginRegister form button {
   padding: 10px 40px;
-  margin-top: 40px;
+  margin-top: 30px;
   border: none;
   font-size: 14px;
-  background: #46a2fd;
+  background: rgba(255, 255, 255, 0.24);
   color: white;
   cursor: pointer;
-  outline: none;
+  transition: all 300ms;
+  border: solid #1BCC95;
+  font-weight: 600;
 }
-
-/* .formularioLogin {
-  opacity: 1;
-  display: block;
-} */
+.contenedorLoginRegister form button:hover{
+  background:rgba(255, 255, 255, 0.911);
+  color: black;
+}
 
 .formularioRegister {
   display: block;

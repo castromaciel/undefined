@@ -29,7 +29,7 @@ const crearUsuario = (e) => {
   e.preventDefault();
 
   // Obtenemos los datos de los inputs
-  let nombre = document.getElementById("nombreUser").value;
+  let nombre = document.getElementById("nombre").value;
   let email = document.getElementById("email").value;
   let contraseña = document.getElementById("contraseña").value;
 
@@ -45,7 +45,7 @@ const crearUsuario = (e) => {
       localStorage.setItem("newUser", JSON.stringify(usuario));
       console.log(usuarios)
       // Redirigimos al login
-      // window.location.replace("login.html");
+      window.location.replace("/pages/login.html");
     } else {
       console.error("El administrador ya existe");
     }
@@ -59,4 +59,6 @@ const crearUsuario = (e) => {
   console.log(usuarios)
 };
 
-function loginBtn () {window.location.replace('login.html')}
+function loginBtn() {
+  window.location.replace("login.html");
+}

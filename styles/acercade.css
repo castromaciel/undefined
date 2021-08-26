@@ -4,11 +4,11 @@
   margin: 0;
   box-sizing: border-box;
 }
-header{
+/* header{
   background-color: white;
   text-align: center;
   outline: thick double #00d460;
-}
+} */
 body{
   background-image: url(/images/fondo2.jpg);
   background-position: center;

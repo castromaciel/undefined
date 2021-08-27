@@ -6,8 +6,7 @@ const admin = [{
   nombre: "Admin",
   contraseña: "admin",
   email: "none"
-  }
-];
+}];
 
 const usuarios = JSON.parse(localStorage.getItem('usuariosKey')) || [admin]
 
@@ -17,10 +16,10 @@ fetch(url)
   {
     chargingGames(games)
   })
-  axios.get('http://localhost:3000/games')
+axios.get('http://localhost:3000/games')
   .then(apiGames => {
     filterFunction(apiGames)
-  })
+})
 class Categories{
   constructor(games){
     this.games = games;
@@ -106,22 +105,11 @@ class Categories{
     }
   }
 }
-// let usuarioRegistered =[];
-// usuarioRegistered.push(admin)
-// usuarioRegistered.push(localStorage.getItem('usuariosKey'))
-
-
-// localStorage.removeItem('usuariosKey')
-let usuarioRegistered =[];
-usuarioRegistered.push(admin)
-
 let usuario =  JSON.parse(localStorage.getItem('usuarioLogueado'))
 let user = document.getElementById('users')
-// let loginAdmin = document.getElementById('loginAdmin')
-// let registerAdmin = document.getElementById('registerAdmin')
 
 if (usuario === null) {
-  // console.log('no hay usuario logueado')
+  console.log('no hay usuario logueado')
 }else if(usuario.nombre === 'Admin'){
   let adminNav = document.createElement('li')
   adminNav.classList = 'nav-item me-4'

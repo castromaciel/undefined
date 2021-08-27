@@ -105,8 +105,6 @@ class Categories{
     }
   }
 }
-let usuarioRegistered =[];
-usuarioRegistered.push(admin)
 let usuario =  JSON.parse(localStorage.getItem('usuarioLogueado'))
 let user = document.getElementById('users')
 
